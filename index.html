@@ -1,144 +1,973 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cozy Bean Cafe - Home</title>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RE-THREAD — Circular Fashion Decisions</title>
+<style>
+:root{--bg:#f7f3e9;--card:#fff;--ink:#23272a;--mut:#67706b;--g:#1f4d3a;--s:#a9c0a4;--l:#e6eee1;--acc:#d98c5f;--line:#e4e0d2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141a17;--card:#1d2621;--ink:#eef1ea;--mut:#9aa89f;--g:#7fc29b;--s:#3d5a49;--l:#243029;--line:#2c3a32}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+.sans,button,input,td,th,nav{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);line-height:1.05}h2{font-size:clamp(1.7rem,4vw,2.6rem)}h3{font-size:1.15rem}
+p{line-height:1.6;color:var(--mut);margin:.5rem 0}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}.sec{padding:56px 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nb{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;letter-spacing:.14em;color:var(--g);cursor:pointer;font-family:Georgia,serif;font-size:1.15rem}
+.links{display:flex;gap:6px}.links a{padding:8px 14px;border-radius:99px;color:var(--ink);text-decoration:none;font-size:.92rem;cursor:pointer}
+.links a.on,.links a:hover{background:var(--l);color:var(--g)}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 12px;color:var(--ink);font-size:1.1rem;cursor:pointer}
+@media(max-width:760px){.burger{display:block}.links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg);padding:10px 20px 16px;border-bottom:1px solid var(--line)}.links.open{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:99px;border:1.5px solid var(--g);background:var(--g);color:#fff;font-size:1rem;cursor:pointer;transition:.2s;text-decoration:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px #1f4d3a33}.btn.o{background:transparent;color:var(--g)}.btn:disabled{opacity:.4;pointer-events:none}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .btn{color:#10201a}:root:not([data-theme=light]) .btn.o{color:var(--g)}}
+@media(max-width:600px){.btn.full{width:100%}}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 6px 24px #0000000a;transition:.25s}
+.card.h:hover{transform:translateY(-4px);box-shadow:0 14px 34px #0000001a}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.g5{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:50px 0}
+@media(max-width:820px){.hero{grid-template-columns:1fr}}
+.tag{display:inline-block;background:var(--l);color:var(--g);padding:6px 14px;border-radius:99px;font-size:.8rem;font-family:system-ui;letter-spacing:.08em;margin-bottom:16px}
+.num{font-size:2.4rem;color:var(--s);font-weight:700}
+.drop{border:2px dashed var(--s);border-radius:28px;padding:48px 20px;text-align:center;background:var(--l);transition:.2s}
+.drop.on{border-color:var(--g);transform:scale(1.01)}
+.prev{max-width:100%;max-height:340px;border-radius:20px;object-fit:contain;background:#fff}
+.bar{height:10px;background:var(--l);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--g);border-radius:9px;transition:width 1s}
+.step{display:flex;gap:12px;align-items:center;padding:10px 0;color:var(--mut);transition:.3s;font-family:system-ui}.step.d{color:var(--ink)}
+.chk{width:26px;height:26px;border-radius:50%;border:2px solid var(--s);display:grid;place-items:center;font-size:.8rem}.step.d .chk{background:var(--g);border-color:var(--g);color:#fff}
+.spin{animation:sp 1s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}}.fu{animation:fu .5s both}
+table{width:100%;border-collapse:collapse}td,th{padding:10px 6px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+.node{cursor:pointer;padding:12px 16px;border-radius:99px;border:1.5px solid var(--s);background:var(--card);color:var(--ink);font-size:.95rem}.node.on{background:var(--g);color:#fff;border-color:var(--g)}
+.tl{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:system-ui;font-size:.85rem}.tl b{background:var(--l);color:var(--g);padding:5px 11px;border-radius:99px;font-weight:500}.tl span{color:var(--mut)}
+.note{font-size:.82rem;color:var(--mut);font-style:italic}
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-size:.85rem;color:var(--mut)}
+.big{font-size:2.2rem;color:var(--g);font-weight:700}
+.badge{opacity:.35;filter:grayscale(1)}.badge.on{opacity:1;filter:none}
+ 
+body{padding-bottom:70px}@media(min-width:761px){body{padding-bottom:0}.bn{display:none!important}}
+.bn{position:fixed;bottom:0;left:0;right:0;z-index:9;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.bn a{flex:1;text-align:center;padding:10px 0;font:.75rem system-ui;color:var(--mut);cursor:pointer}.bn a.on{color:var(--g);font-weight:600}
+.chip{display:inline-block;padding:3px 10px;border-radius:99px;background:var(--l);color:var(--g);font:.75rem system-ui;margin:2px}
+.ai{background:var(--acc);color:#fff;padding:2px 9px;border-radius:99px;font:.7rem system-ui;margin-left:8px;vertical-align:middle}
+.warn{background:#fff3e0;color:#7a4a10;border-radius:16px;padding:14px 16px;font:.92rem system-ui;margin:12px 0}
+input[type=text],input[type=search]{width:100%;padding:12px 16px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1rem}
+select{padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.th{width:100%;height:120px;object-fit:cover;border-radius:14px;background:var(--l)}.vid{width:100%;border-radius:20px;background:#000;max-height:60vh}
+.sv0{color:var(--mut)}.sv1{color:#4c8a5e}.sv2{color:#c98a2b}.sv3{color:#b5432f}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+html{-webkit-text-size-adjust:100%}*{-webkit-tap-highlight-color:transparent}
+button,.links a,.bn a,.node{touch-action:manipulation}input,select,textarea{font-size:16px}select{flex:1;min-width:0}img,video{max-width:100%}
+@media(hover:none){.card.h:hover{transform:none;box-shadow:0 6px 24px #0000000a}.btn:hover{transform:none;box-shadow:none}}
+@media(max-width:600px){.w{padding:0 16px}.sec{padding:34px 0}.card{padding:18px;border-radius:20px}.hero{padding:24px 0;gap:22px}.btn{min-height:48px;padding:13px 20px}.node{min-height:44px}.links a{padding:13px 14px}.bn a{padding:8px 0 10px}.big{font-size:1.8rem}}
+:root[data-theme=dark]{--bg:#141a17;--card:#1d2621;--ink:#eef1ea;--mut:#9aa89f;--g:#7fc29b;--s:#3d5a49;--l:#243029;--line:#2c3a32}:root[data-theme=dark] .btn{color:#10201a}:root[data-theme=dark] .btn.o{color:var(--g)}
+.ins{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:900px){.ins{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.ins{grid-template-columns:1fr}}.im{position:relative;aspect-ratio:4/3;background:var(--l);overflow:hidden}.im img,.im svg{width:100%;height:100%;object-fit:cover;display:block}.ba{font-size:.8rem;color:var(--g);font-weight:600}.ba3{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:8px 0}.ba3 .sm{border-radius:14px}.arr{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--mut);font-size:.8rem;text-align:center}details summary{font-size:.92rem}</style></head><body><div id="root"></div>
+<script src="config.js" onerror="void 0"></script>
+<script>/* Set your deployed backend URL here (HTTPS), e.g. "https://rethread-api.onrender.com". Must not be localhost. */
+window.RETHREAD_API_URL = window.RETHREAD_API_URL || "";</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script>
+const { useState, useEffect, useRef } = React;
+const ACTS = ["Reuse", "Repair", "Donate", "Recycle", "Brand Take-back"], ICON = { Reuse: "\u2764\uFE0F", Repair: "\u{1F9F5}", Donate: "\u{1F381}", Recycle: "\u267B\uFE0F", "Brand Take-back": "\u{1F3F7}\uFE0F" };
+const SEV = ["None", "Low", "Medium", "High"], CK = ["Visible wear", "Stains", "Holes", "Tears", "Pilling", "Fading", "Seam damage", "Stretch / deformation"];
+const IMP = { Reuse: [1200, 3.4, 0.8, 12], Repair: [1e3, 2.9, 0.7, 9], Donate: [900, 2.5, 0.6, 10], Recycle: [500, 1.4, 0.5, 0], "Brand Take-back": [600, 1.7, 0.5, 4] };
+const LIB = {
+  Cotton: ["Natural cellulose fibre", "Breathable, absorbent, soft; moderate durability", "Machine wash warm/cool", "Easy to mend; great for reuse and rags", "Mono-cotton is the easiest to recycle; blends are harder"],
+  Linen: ["Flax fibre", "Very breathable, crisp, wrinkles easily", "Wash cool, air dry", "Mendable; visible repairs suit it", "Recyclable when 100% linen"],
+  Wool: ["Animal protein fibre", "Insulating, resilient, can felt/pill", "Cool wash or hand wash", "Darning works well; felting reuse", "Valued for mechanical recycling"],
+  Silk: ["Protein filament", "Smooth, delicate, low durability when wet", "Hand wash or dry clean", "Specialist repair", "Rarely recycled; reuse first"],
+  Polyester: ["Synthetic petro-based", "Durable, quick-drying, low breathability", "Wash cool", "Simple stitching", "Blends limit recycling; pure PET may qualify for programs"],
+  Nylon: ["Synthetic polyamide", "Strong, abrasion-resistant, stretchy", "Wash cool, low heat", "Patch repairs work", "Specialised recycling only"],
+  Viscose: ["Regenerated cellulose", "Soft drape, weak when wet", "Gentle wash", "Delicate seams; mend carefully", "Limited recycling access"],
+  Rayon: ["Regenerated cellulose (like viscose)", "Fluid, low wet strength", "Gentle cycle", "Mend by hand", "Limited recycling access"],
+  Acrylic: ["Synthetic wool-alternative", "Warm, light, pills easily", "Cool wash", "Pill removal helps", "Hard to recycle"],
+  Elastane: ["Elastic synthetic", "Adds stretch; degrades with heat", "Cool wash, no high heat", "Hard to repair", "Complicates recycling of blends"],
+  Denim: ["Cotton twill, indigo-dyed", "Tough, low stretch, fades", "Wash inside-out, cool", "Patches and darning are common", "Cotton denim is recyclable where accepted"],
+  Canvas: ["Heavy plain-weave cotton", "Very durable, stiff", "Spot clean", "Sturdy stitching repairs", "Similar to cotton"],
+  Fleece: ["Polyester pile knit", "Warm, light, sheds microfibres", "Cool wash, no heat", "Zip/seam repairs", "Polyester pathways"],
+  Corduroy: ["Cotton ribbed pile", "Durable, warm, pile can flatten", "Wash inside-out", "Mendable", "Cotton pathways"],
+  Velvet: ["Pile fabric, various fibres", "Luxurious, crushes easily", "Dry clean often", "Specialist repair", "Depends on fibre"],
+  Satin: ["Weave (often polyester/silk)", "Smooth, low breathability, snags", "Gentle wash", "Careful hand repair", "Depends on fibre"],
+  Chiffon: ["Sheer light weave", "Delicate, frays", "Hand wash", "Difficult repair", "Depends on fibre"],
+  Twill: ["Diagonal weave", "Sturdy, drapes well", "Per fibre", "Easy to mend", "Per fibre"],
+  Jersey: ["Single-knit structure", "Soft, stretchy, curls at edges", "Cool wash", "Ladders/holes can be darned", "Per fibre"],
+  Knit: ["Looped structure", "Stretchy, warm; can unravel", "Per fibre", "Darning/reknitting", "Per fibre"],
+  Hemp: ["Bast fibre", "Strong, coarse, breathable", "Wash cool", "Sturdy stitching repairs", "Recyclable when 100% hemp"],
+  Jute: ["Coarse bast fibre", "Strong, rough, biodegradable", "Spot clean", "Patch repairs", "Often reused or composted"],
+  Modal: ["Regenerated cellulose", "Very soft, drapey", "Gentle wash", "Mend carefully", "Limited recycling access"],
+  "Lyocell / Tencel": ["Regenerated cellulose (closed-loop)", "Soft, smooth, breathable", "Gentle wash", "Mend carefully", "Limited recycling access"],
+  Cupro: ["Regenerated cellulose", "Silky, drapey, delicate", "Gentle wash", "Careful hand repair", "Limited recycling access"],
+  Lace: ["Open decorative construction", "Delicate, sheer, snags", "Hand wash", "Specialist repair", "Depends on fibre"],
+  Flannel: ["Brushed weave, often cotton", "Soft, warm, can pill", "Wash warm", "Easy to mend", "Per fibre"],
+  Terry: ["Looped-pile construction", "Absorbent, fluffy", "Wash warm", "Re-stitch loops", "Per fibre"],
+  Muslin: ["Light plain weave, often cotton", "Soft, airy", "Wash warm", "Easy to mend", "Per fibre"]
+};
+const mk = (c) => `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect width="300" height="300" fill="#ece8da"/><path d="M95 50l-65 45 30 45 30-20v130h120V120l30 20 30-45-65-45q-25 25-70 0z" fill="${c}"/></svg>`)}`;
+const CARE = { "Machine wash 30\xB0C": "Wash at or below 30\xB0C", "Do not bleach": "Avoid bleach", "Iron low heat": "Iron on low heat", "Air dry": "Dry flat or hang; avoid high-heat drying", "Hand wash": "Wash by hand", "Dry clean": "Professional dry cleaning" };
+const DEMOS = [
+  { id: "d1", name: "Blue Cotton T-Shirt", type: "T-Shirt", color: "Blue", hex: "#3b6ea5", fab: [["Cotton", 72], ["Linen", 16], ["Rayon", 12]], label: { comp: [["Cotton", 95], ["Elastane", 5]], care: ["Machine wash 30\xB0C", "Do not bleach", "Iron low heat", "Air dry"], brand: "Example Brand", size: "M" }, cond: [1, 0, 0, 0, 1, 2, 0, 1], overall: "Good", dmg: null, q: [82, 89, 91, 76], sc: [92, 76, 85, 61, 54] },
+  { id: "d2", name: "Denim Jeans", type: "Jeans", color: "Indigo", hex: "#2b3f6b", fab: [["Denim", 78], ["Canvas", 14], ["Twill", 8]], label: null, cond: [2, 0, 0, 0, 1, 2, 1, 2], overall: "Fair", dmg: { t: "Fraying", loc: "Left hem", sev: "Low" }, q: [70, 80, 72, 74], sc: [64, 86, 72, 55, 48] },
+  { id: "d3", name: "Polyester Sports Jacket", type: "Sportswear", color: "Black", hex: "#2a2d2f", fab: [["Polyester", 66], ["Nylon", 24], ["Acrylic", 10]], label: { comp: [["Polyester", 100]], care: ["Machine wash 30\xB0C", "Do not bleach", "Air dry"], brand: "Example Sport", size: "L" }, cond: [1, 0, 0, 0, 1, 1, 0, 1], overall: "Good", dmg: { t: "Loose thread", loc: "Cuff", sev: "Low" }, q: [85, 86, 88, 80], sc: [80, 62, 72, 46, 66] },
+  { id: "d4", name: "Wool Sweater", type: "Other", color: "Grey", hex: "#8a8f94", fab: [["Wool", 52], ["Acrylic", 30], ["Cotton", 18]], label: null, cond: [2, 0, 0, 0, 3, 1, 0, 1], overall: "Fair", dmg: { t: "Pilling", loc: "Underarms", sev: "High" }, q: [74, 60, 78, 70], sc: [68, 58, 80, 40, 30] },
+  { id: "d5", name: "Cotton Dress", type: "Dresses", color: "Rust", hex: "#b5623b", fab: [["Cotton", 81], ["Linen", 11], ["Rayon", 8]], label: { comp: [["Cotton", 100]], care: ["Machine wash 30\xB0C", "Iron low heat", "Air dry"], brand: "Example Label", size: "S" }, cond: [1, 1, 0, 0, 0, 1, 0, 0], overall: "Good", dmg: { t: "Stain", loc: "Hem", sev: "Low" }, q: [86, 90, 92, 72], sc: [88, 70, 82, 52, 50] }
+];
+const SEED = [{ id: "s1", name: "Denim Jacket", type: "Jackets", material: "Denim", cond: "Fair", action: "Repair", img: mk("#2b3f6b"), ev: ["Purchased", "First Use", "Repair"], sample: 1 }, { id: "s2", name: "Grey Hoodie", type: "Other", material: "Cotton Blend", cond: "Good", action: "Donate", img: mk("#8a8f94"), ev: ["Purchased", "First Use", "Donation"], sample: 1 }];
+const STAGES = ["Purchased", "First Use", "Repair", "Reuse", "Donation", "Recycling"];
+const UNK = { id: "u", name: "Unidentified garment", type: "Unknown", color: "Unknown", hex: "#9aa89f", fab: [], label: null, cond: [0, 0, 0, 0, 0, 0, 0, 0], overall: "Not assessed", dmg: null, q: [0, 0, 0, 0], sc: [0, 0, 0, 0, 0], unassessed: true };
+const wait = (t) => new Promise((r) => setTimeout(r, t));
+const FIBRES = ["Linen", "Cotton", "Wool", "Silk", "Hemp", "Jute", "Rayon", "Viscose", "Modal", "Lyocell / Tencel", "Cupro", "Polyester", "Nylon", "Acrylic", "Elastane"];
+const FCAT = (n) => ["Linen", "Cotton", "Wool", "Silk", "Hemp", "Jute"].includes(n) ? "Natural fibre" : ["Rayon", "Viscose", "Modal", "Lyocell / Tencel", "Cupro"].includes(n) ? "Regenerated / semi-synthetic fibre" : ["Polyester", "Nylon", "Acrylic", "Elastane"].includes(n) ? "Synthetic fibre" : "Construction / surface \u2014 not a fibre";
+const TR = Object.fromEntries(`Linen:crisp rough|no|no|slubby textured
+Cotton:soft smooth|no slightly|no|smooth textured
+Wool:soft fuzzy rough|slightly yes|no|fuzzy textured
+Silk:smooth slippery soft|no|yes|smooth
+Hemp:rough crisp|no|no|slubby textured
+Jute:rough|no|no|slubby textured
+Rayon:smooth soft slippery|no|slight|smooth
+Viscose:smooth soft slippery|no|slight|smooth
+Modal:soft smooth|slightly|slight|smooth
+Lyocell / Tencel:soft smooth|no|slight|smooth
+Cupro:smooth slippery|no|slight yes|smooth
+Polyester:smooth slippery|no slightly|slight yes|smooth
+Nylon:smooth slippery|slightly|yes slight|smooth
+Acrylic:soft fuzzy|slightly|no|fuzzy
+Elastane:smooth|yes|slight|smooth
+Denim:rough crisp|no slightly|no|textured ribbed
+Canvas:rough crisp|no|no|textured
+Corduroy:soft|no|no|ribbed
+Velvet:soft smooth|slightly no|yes slight|smooth
+Satin:smooth slippery|no slightly|yes|smooth
+Chiffon:smooth slippery|no|slight|smooth
+Twill:crisp rough|no|no|ribbed textured
+Jersey:soft smooth|yes slightly|no|smooth ribbed
+Knit:soft|yes slightly|no|textured ribbed
+Fleece:soft fuzzy|slightly|no|fuzzy
+Lace:smooth rough|no|no|textured
+Flannel:soft fuzzy|no|no|fuzzy
+Terry:soft fuzzy|slightly|no|textured
+Muslin:soft crisp|no|no|smooth textured`.split("\n").map((l) => {
+  const i = l.indexOf(":");
+  return [l.slice(0, i), l.slice(i + 1).split("|")];
+}));
+const QK = ["feel", "stretch", "shine", "surface"];
+const scoreAns = (a) => {
+  const ks = QK.filter((k) => a[k]);
+  if (!ks.length) return null;
+  const sc = Object.entries(TR).map(([n, t]) => [n, Math.exp(1.2 * ks.reduce((s, k) => s + (t[QK.indexOf(k)].split(" ").includes(a[k]) ? 1 : -1), 0))]);
+  const tot = sc.reduce((s, x) => s + x[1], 0);
+  const c = sc.map(([n, v]) => [n, Math.round(v / tot * 100)]).sort((x, y) => y[1] - x[1]).slice(0, 3);
+  return { cands: c, level: ks.length === 4 && c[0][1] >= 40 && c[0][1] - c[1][1] >= 12 ? "MEDIUM" : "LOW" };
+};
+function refab(R, ans) {
+  const f = R.fabric, b = f.base || f;
+  if (f.confirmed || R.composition) return f;
+  const q = scoreAns(ans);
+  if (!q) return { ...b, base: b };
+  let c, l, s;
+  if (b.status === "none") {
+    c = q.cands;
+    l = q.level;
+    s = "Questionnaire estimate (your answers)";
+  } else {
+    const m = {};
+    b.candidates.forEach(([n, p]) => m[n] = (m[n] || 0) + p * 0.5);
+    q.cands.forEach(([n, p]) => m[n] = (m[n] || 0) + p * 0.5);
+    c = Object.entries(m).sort((x, y) => y[1] - x[1]).slice(0, 3).map(([n, p]) => [n, Math.round(p)]);
+    l = b.level === "HIGH" ? "HIGH" : q.level === "LOW" ? "LOW" : "MEDIUM";
+    s = "Visual AI Estimate (simulated) + your answers";
+  }
+  if (b.poor) l = "LOW";
+  return { ...b, status: "visual", candidates: c, top: c[0][0], conf: c[0][1], level: l, source: s, base: b };
+}
+const TYPES = ["T-Shirt", "Shirt", "Jeans", "Dresses", "Jackets", "Sportswear", "Hoodie", "Saree", "Skirt", "Trousers", "Shorts", "Coat", "Sweater", "Kurta", "Top", "Fabric", "Other"], COLORS = [["Blue", "#3b6ea5"], ["Indigo", "#2b3f6b"], ["Black", "#2a2d2f"], ["White", "#e9e9e4"], ["Grey", "#8a8f94"], ["Beige", "#d9c7a3"], ["Rust", "#b5623b"], ["Red", "#b5432f"], ["Pink", "#e7a4b5"], ["Green", "#3f7a55"]];
+const CONFIG = { API_BASE: (typeof window !== "undefined" && (window.RETHREAD_API_URL || window.RETHREAD_API) || "").replace(/\/$/, "") };
+let lastErr = "";
+(async () => { const u = CONFIG.API_BASE + "/api/health"; try { const r = await fetch(u); console.info("[RE-THREAD] GET", CONFIG.API_BASE ? u : "(same origin) /api/health", "->", r.status); } catch (e) { console.warn("[RE-THREAD] health check unreachable:", u); } })();
+async function api(path, body) {
+  const fail = (kind, detail) => { console.warn("[RE-THREAD]", kind, detail); const e = new Error(kind); e.kind = kind; return e; };
+  let r;
+  try {
+    r = await fetch(CONFIG.API_BASE + path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  } catch (e) {
+    throw fail("down", e && e.message);
+  }
+  let j = null;
+  try { j = await r.json(); } catch (e) {}
+  if (r.status === 413 || j && j.code === "too_large") throw fail("large", r.status);
+  if (r.status === 400 || r.status === 415 || j && j.code === "invalid_image") throw fail("invalid", r.status);
+  if (!r.ok || !j || j.success === false) throw fail("down", r.status + " " + (j && j.error || ""));
+  return j;
+}
+const shrink = (src) => new Promise((res, rej) => {
+  const i = new Image();
+  i.onload = () => {
+    const k = Math.min(1, 1568 / Math.max(i.width, i.height)), c = document.createElement("canvas");
+    c.width = Math.max(1, Math.round(i.width * k));
+    c.height = Math.max(1, Math.round(i.height * k));
+    c.getContext("2d").drawImage(i, 0, 0, c.width, c.height);
+    res(c.toDataURL("image/jpeg", 0.85));
+  };
+  i.onerror = () => rej(new Error("The image could not be read. Try a different JPG, PNG or WEBP."));
+  i.src = src;
+});
+async function analyzeFabric(d, ev, poor) {
+  if (!d.demo) return { status: "none", candidates: [], top: "Unknown", conf: 0, level: "LOW", source: "Not identified", poor, reason: "Fabric analysis isn\'t available for this photo right now. Add a label or close-up, or choose the fabric yourself." };
+  const f = d.fab.map((x) => [...x]);
+  if (!ev.fabric && !d.label) {
+    f[0][1] -= 14;
+    f[1][1] += 9;
+    f[2][1] += 5;
+  }
+  const c = f[0][1], strong = ev.fabric || d.label;
+  return { status: "visual", candidates: f, top: f[0][0], conf: c, level: poor ? "LOW" : c >= 75 && strong ? "HIGH" : c >= 60 ? "MEDIUM" : "LOW", source: "DEMO sample \u2014 not an AI prediction", poor };
+}
+async function analyzeLabel(d, ev) {
+  return d.demo && d.label ? { ...d.label, conf: "High" } : null;
+}
+async function analyzeCondition(d) {
+  return { overall: d.overall, items: d.cond, damage: d.dmg, quality: d.q };
+}
+function generateRecommendation(sc) {
+  const s = Object.fromEntries(ACTS.map((a, i) => [a, sc[i]]));
+  const best = ACTS.reduce((a, b) => s[b] > s[a] ? b : a);
+  return { scores: s, best };
+}
+const calculateImpact = (a) => ({ water: IMP[a][0], co2: IMP[a][1], waste: IMP[a][2], months: IMP[a][3] });
+const LP = { likely: 70, possible: 30, unlikely: 10 }, CHEX = Object.fromEntries([...COLORS, ["Brown", "#7a5c3e"], ["Yellow", "#e0b93b"], ["Orange", "#d9822b"], ["Purple", "#7a5aa6"], ["Navy", "#1f2f55"], ["Cream", "#efe6cf"]]);
+const MANUAL = { imageQuality: "Medium", labelDetected: false, garment: { type: "Unknown", level: "Unknown", fullGarmentVisible: false, reason: "No AI analysis was run." }, fabric: { primary: "Unknown", level: "Low", alternatives: [], source: "none" }, composition: { verified: false, fibers: [] }, color: { primary: "Unknown" }, evidence: [], warnings: ["Automatic analysis wasn't used. Everything below is user-provided information."] };
+function fromApi(r, ev) {
+  const g = r.garment, fb = r.fabric, known = fb.primary !== "Unknown", col = r.color.primary, type = g.type, top = known ? fb.primary : "Unknown", lv = fb.level.toUpperCase();
+  const d = { ...UNK, type, color: col, hex: CHEX[col] || "#9aa89f", name: (col !== "Unknown" ? col + " " : "") + (type === "Unknown" ? "Unidentified garment" : type), demo: false, aiGarment: g, framing: g.fullGarmentVisible ? "full" : void 0 };
+  const ai = r.fabricAI, cand = ai ? ai.topPredictions.map((x) => [x.fabric, Math.round(x.confidence * 1e3) / 10]) : known ? [[top, lv === "HIGH" ? 85 : lv === "MEDIUM" ? 60 : 30], ...fb.alternatives.map((a) => [a.name, LP[a.likelihood] || 10])] : [];
+  let fabric = { status: known ? "visual" : "none", candidates: cand, top, conf: cand[0] ? cand[0][1] : 0, level: lv, source: fb.source === "ai_models" ? "AI Fabric Analysis \u2014 ResNet-50 + NASNet" : (fb.source === "none" ? "User-provided information" : "Visual estimate"), poor: r.imageQuality === "Low", reason: ai && ai.message || r.warnings && r.warnings[0] || "The fabric could not be identified from this image." }, composition = null;
+  if (r.composition.verified) {
+    const rows = r.composition.fibers.map((x) => [x.fiber, x.percentage]), b = [...rows].sort((x, y) => y[1] - x[1])[0][0];
+    composition = { rows, src: "Label Verified (read by AI \u2014 check it matches your label)" };
+    fabric = { ...fabric, visTop: known && fb.primary !== b ? fb.primary : null, top: b, level: "HIGH", source: "Label Verified", confirmed: true, status: "visual" };
+  }
+  const used = [["Full garment photo", !!ev.full], ["Fabric close-up", !!ev.fabric], ["Label photo", !!ev.label], ["Damage area photo", !!ev.damage]];
+  return { d, fabric, composition, fabricAI: r.fabricAI || null, label: null, cond: { overall: "Not assessed", items: [0, 0, 0, 0, 0, 0, 0, 0], damage: null, quality: [0, 0, 0, 0] }, rec: { scores: Object.fromEntries(ACTS.map((a) => [a, 0])), best: null }, impact: null, used, quality: r.imageQuality, simulated: false, evidence: r.evidence || [], img: ev.full ? ev.full.src : (ev.fabric || ev.label || ev.damage).src };
+}
+async function analyzeGarment(ev, demo) {
+  if (!demo) {
+    const ph = (n) => window.__rtPhase && window.__rtPhase(n), im = async (k) => ev[k] ? await shrink(ev[k].src) : null; ph(0);
+    const imgs = { full: await im("full"), fabric: await im("fabric"), label: await im("label"), damage: await im("damage") }; ph(1); const r = await api("/api/analyze-image", { images: imgs }); ph(ev.label ? 3 : 2);
+    return fromApi(r, ev);
+  }
+  return analyzeDemo(ev, demo);
+}
+async function analyzeDemo(ev, demo) {
+  await wait(5e3);
+  const d = demo || UNK;
+  const dd = { ...d, demo: !!demo };
+  const br = demo || !ev.full ? 128 : await brightness(ev.full.src), fabric = await analyzeFabric(dd, ev, br < 70 || br > 225), label = await analyzeLabel(dd, ev), cond = await analyzeCondition(dd), rec = d.unassessed ? { scores: Object.fromEntries(ACTS.map((a) => [a, 0])), best: null } : generateRecommendation(d.sc);
+  const used = [["Full garment photo", !!(ev.full || demo)], ["Fabric close-up", !!ev.fabric], [d.demo ? "Label check (sample data)" : "Label photo (confirm composition)", !!label || !!ev.label], ["Damage area photo", !!ev.damage]];
+  const n = used.filter((x) => x[1]).length - (ev.damage ? 1 : 0);
+  return { d: dd, fabric, label, cond, rec, impact: rec.best ? calculateImpact(rec.best) : null, used, quality: n >= 3 || label ? "High" : n === 2 ? "Medium" : "Low", simulated: true, img: ev.full ? ev.full.src : mk(d.hex) };
+}
+const store = { get: (k, v) => {
+  try {
+    const x = localStorage.getItem(k);
+    return x ? JSON.parse(x) : v;
+  } catch (e) {
+    return v;
+  }
+}, set: (k, v) => {
+  try {
+    localStorage.setItem(k, JSON.stringify(v));
+  } catch (e) {
+  }
+} };
+const fmt = (b) => b > 1048576 ? (b / 1048576).toFixed(1) + " MB" : Math.round(b / 1024) + " KB";
+const go = (p) => {
+  location.hash = "/" + p;
+};
+const PG = [["home", "Home"], ["scan", "Scan"], ["wardrobe", "Wardrobe"], ["dashboard", "Dashboard"], ["library", "Library"]];
+const BN = [["home", "\u{1F3E0}", "Home"], ["scan", "\u{1F4F7}", "Scan"], ["wardrobe", "\u{1F455}", "Wardrobe"], ["dashboard", "\u{1F4CA}", "Dashboard"]];
+const ALL = [...PG, ["analysis"], ["recommendation"]];
+const useRoute = () => {
+  const g = () => location.hash.slice(2) || "home";
+  const [r, s] = useState(g());
+  useEffect(() => {
+    const f = () => {
+      s(g());
+      scrollTo(0, 0);
+    };
+    addEventListener("hashchange", f);
+    return () => removeEventListener("hashchange", f);
+  }, []);
+  return ALL.some((p) => p[0] === r) ? r : "home";
+};
+async function brightness(src) {
+  return new Promise((r) => {
+    const i = new Image();
+    i.onload = () => {
+      const c = document.createElement("canvas");
+      c.width = c.height = 24;
+      const x = c.getContext("2d");
+      x.drawImage(i, 0, 0, 24, 24);
+      const d = x.getImageData(0, 0, 24, 24).data;
+      let s = 0;
+      for (let k = 0; k < d.length; k += 4) s += (d[k] + d[k + 1] + d[k + 2]) / 3;
+      r(s / 576);
+    };
+    i.onerror = () => r(128);
+    i.src = src;
+  });
+}
+const FAV = { Cotton: "tote cloth cushion scrunchie hanger", Denim: "tote pouch basket skirt cushion", Wool: "cushion petbed scrunchie", Silk: "scrunchie cushion", Polyester: "tote pouch drawstring", Linen: "tote cushion cloth apron", Nylon: "pouch drawstring tote" };
+const IDEAS = [
+  ["tote", "tote", "\u{1F45C}", "Tote Bag", "upcycle", "Turn the garment into a reusable shopping bag.", 1, 25, "easy nosew", "T-Shirt Shirt Jeans Other Dresses Saree Fabric", 1, "Scissors, thread (or fabric knots for no-sew)", "Lay the garment flat|Mark and cut off sleeves and neckline|Shape the opening with a curve|Sew or knot the bottom hem shut|Trim and finish the edges"],
+  ["crop", "crop", "\u{1F45A}", "Crop Top", "redesign", "Redesign it into a cropped casual top.", 1, 18, "easy wear", "T-Shirt Shirt Dresses", 0, "Scissors, chalk, ruler", "Try it on and mark the new length|Lay flat and draw a straight line|Cut slowly along the line|Hem or leave raw edge (jersey won't fray)"],
+  ["sleeveless", "sleeveless", "\u{1F3BD}", "Sleeveless Top", "redesign", "Cut off the sleeves for a cooler wearable piece.", 1, 15, "easy nosew wear", "T-Shirt Shirt", 0, "Scissors", "Mark a curve at each armhole|Cut both sides evenly|Try on and trim if needed|Optional: fold and stitch the edge"],
+  ["drawstring", "drawstring", "\u{1F392}", "Drawstring Bag", "upcycle", "Convert the body into a lightweight drawstring bag.", 2, 40, "sew", "T-Shirt Other Sportswear Hoodie Fabric", 0, "Scissors, needle, thread, cord or fabric strip", "Cut the body straight under the arms|Sew the bottom shut|Fold and stitch a channel at the top|Thread cord through the channel|Knot the ends"],
+  ["cushion", "cushion", "\u{1F9F8}", "Cushion Cover", "home", "Reuse the fabric as a decorative cushion cover.", 2, 50, "sew home", "*", 0, "Scissors, needle, thread, cushion insert", "Cut two squares slightly larger than the cushion|Place right sides together|Sew three sides|Turn out, insert the cushion|Stitch the opening closed"],
+  ["hanger", "hanger", "\u{1FAB4}", "Plant Hanger", "home", "Use fabric strips to make a hanging plant holder.", 2, 35, "nosew creative home", "T-Shirt Other Dresses Saree Fabric", 0, "Scissors, a ring or hook", "Cut long strips about 3 cm wide|Knot four strips at the top|Braid or knot a pocket for the pot|Hang and test with a light plant"],
+  ["cloth", "cloth", "\u{1F9F9}", "Cleaning Cloths", "home", "Cut worn fabric into reusable household cloths.", 1, 10, "nosew easy home", "*", 1, "Scissors", "Wash the garment|Cut into 20 cm squares|Optionally hem the edges"],
+  ["pouch", "pouch", "\u270F\uFE0F", "Pouch / Phone Sleeve", "upcycle", "Turn sturdy fabric into a pencil pouch or phone sleeve.", 2, 40, "sew creative", "Jeans Sportswear Fabric", 0, "Scissors, thread, zip or button", "Cut a rectangle twice the pouch height|Fold and sew the sides|Add a zip or button closure|Turn and press"],
+  ["basket", "basket", "\u{1F9FA}", "Storage Basket", "home", "Stitch sturdy panels into a small storage basket.", 2, 60, "sew home", "Jeans Other Fabric", 1, "Scissors, thread, stiff lining", "Cut a base and side panels|Sew panels into a tube|Attach the base|Fold the rim over and stitch"],
+  ["skirt", "skirt", "\u{1F457}", "Skirt", "redesign", "Redesign into a wearable skirt.", 3, 90, "sew creative", "Jeans Dresses Saree Fabric", 0, "Scissors, seam ripper, thread, elastic or extra panel", "Unpick the inseam|Add a triangular panel if needed|Sew the new seam|Hem to length|Press and try on"],
+  ["apron", "apron", "\u{1F9D1}\u200D\u{1F373}", "Apron", "upcycle", "Turn the fabric into a simple kitchen apron.", 2, 60, "sew home", "Shirt Jeans Fabric", 1, "Scissors, thread, ribbon or strips", "Cut a rectangle with a neck curve|Hem all edges|Attach neck and waist ties|Add a pocket from spare fabric"],
+  ["scrunchie", "scrunchie", "\u{1F380}", "Hair Scrunchie (gift)", "gift", "A small handmade gift from spare fabric.", 1, 15, "easy gift creative", "*", 0, "Scissors, needle, thread, elastic", "Cut a long strip|Fold and sew into a tube|Thread elastic through|Join the ends and stitch closed"],
+  ["petbed", "petbed", "\u{1F43E}", "Pet Bed", "home", "Stuff fabric into a soft bed for a pet.", 2, 60, "sew home", "Other Jackets Hoodie", 1, "Scissors, thread, stuffing", "Cut two large circles or squares|Sew around leaving a gap|Stuff evenly|Stitch the gap closed"]
+];
+const TABS = [["wear", "\u{1F455} Wear Again"], ["redesign", "\u2702\uFE0F Redesign"], ["upcycle", "\u{1F45C} Upcycle"], ["home", "\u{1F3E0} Home"], ["diy", "\u{1F3A8} DIY / Creative"], ["gift", "\u{1F381} Gift"]];
+const PREFS = [["nosew", "\u2764\uFE0F No sewing"], ["easy", "\u2702\uFE0F Easy DIY"], ["sew", "\u{1F9F5} Sewing project"], ["creative", "\u{1F3A8} Creative"], ["wear", "\u{1F455} Keep wearing"], ["home", "\u{1F3E0} Home use"], ["gift", "\u{1F381} Gift"]];
+const OCCS = ["Casual", "College", "Work", "Party", "Travel", "Workout", "Evening"], STYL = ["Minimal", "Streetwear", "Classic", "Boho", "Sporty", "Layered"];
+const BOT = { Casual: ["straight-fit jeans", "relaxed trousers"], College: ["beige trousers", "cargo pants"], Work: ["tailored trousers", "pleated chinos"], Party: ["satin skirt", "black trousers"], Travel: ["joggers", "lightweight trousers"], Workout: ["track pants", "leggings"], Evening: ["midi skirt", "dark trousers"] };
+const SHO = { Minimal: "white sneakers", Streetwear: "chunky sneakers", Classic: "loafers", Boho: "sandals", Sporty: "running shoes", Layered: "boots" }, ACC = { Minimal: "minimal accessories", Streetwear: "cap and crossbody bag", Classic: "leather belt", Boho: "layered necklaces", Sporty: "sports watch", Layered: "scarf" }, LAY = { Layered: "an open overshirt", Streetwear: "an oversized jacket", Classic: "a blazer" };
+const PALS = { Neutrals: ["#d9c7a3", "#8a8f94"], Earth: ["#b5623b", "#7a5c3e"], Forest: ["#1f4d3a", "#a9c0a4"], Monochrome: ["#2a2d2f", "#8a8f94"], Pastel: ["#f3c6d0", "#c6dcf3"], Bold: ["#c0392b", "#f1c40f"] };
+const DIFF = ["", "Easy", "Medium", "Advanced"];
+function Art({ k, c }) {
+  const s = "#00000033", P = { tote: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", { d: "M70 60q0-35 30-35t30 35", fill: "none", stroke: c, strokeWidth: "6" }), /* @__PURE__ */ React.createElement("path", { d: "M50 60h100l-8 90H58z", fill: c, stroke: s })), crop: /* @__PURE__ */ React.createElement("path", { d: "M60 40l-35 25 15 25 15-8v20h90v-20l15 8 15-25-35-25q-15 15-40 0z", fill: c, stroke: s }), sleeveless: /* @__PURE__ */ React.createElement("path", { d: "M70 30q10 25 30 25t30-25l10 5-5 110H65L60 35z", fill: c, stroke: s }), drawstring: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", { d: "M60 50h80l10 100H50z", fill: c, stroke: s }), /* @__PURE__ */ React.createElement("path", { d: "M60 50q40 20 80 0M100 60v40", fill: "none", stroke: "#fff", strokeWidth: "4" })), cushion: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("rect", { x: "40", y: "35", width: "120", height: "100", rx: "18", fill: c, stroke: s }), /* @__PURE__ */ React.createElement("circle", { cx: "100", cy: "85", r: "6", fill: "#fff" })), hanger: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("path", { d: "M100 15v40M100 55l-30 50M100 55l30 50M100 55v60", stroke: c, strokeWidth: "5", fill: "none" }), /* @__PURE__ */ React.createElement("path", { d: "M70 115h60l-8 35H78z", fill: "#a9c0a4" })), cloth: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("rect", { x: "45", y: "35", width: "110", height: "90", rx: "6", fill: c, stroke: s }), /* @__PURE__ */ React.createElement("rect", { x: "55", y: "45", width: "90", height: "70", fill: "none", stroke: "#fff", strokeDasharray: "5 4" })), pouch: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("rect", { x: "40", y: "55", width: "120", height: "60", rx: "14", fill: c, stroke: s }), /* @__PURE__ */ React.createElement("path", { d: "M50 72h100", stroke: "#fff", strokeDasharray: "4 3" })), basket: /* @__PURE__ */ React.createElement("path", { d: "M45 50h110l-15 95H60z", fill: c, stroke: s }), skirt: /* @__PURE__ */ React.createElement("path", { d: "M75 35h50l35 115H40z", fill: c, stroke: s }), apron: /* @__PURE__ */ React.createElement("path", { d: "M75 30h50v30l25 15v75H50V75l25-15z", fill: c, stroke: s }), scrunchie: /* @__PURE__ */ React.createElement("circle", { cx: "100", cy: "85", r: "42", fill: "none", stroke: c, strokeWidth: "26" }), petbed: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("ellipse", { cx: "100", cy: "105", rx: "70", ry: "38", fill: c, stroke: s }), /* @__PURE__ */ React.createElement("ellipse", { cx: "100", cy: "100", rx: "42", ry: "20", fill: "#ffffff55" })) };
+  return /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 200 160", style: { width: "100%", height: "100%", display: "block", background: "var(--l)" }, role: "img", "aria-label": k + " concept illustration" }, P[k]);
+}
+const Lbl = ({ t, c }) => /* @__PURE__ */ React.createElement("span", { className: "chip", style: { position: "absolute", top: 8, left: 8, background: c ? "var(--acc)" : "var(--g)", color: "#fff" } }, t);
+/* ===== RE-THREAD: Visual inspiration ("What you can make") ===== */
+const E = React.createElement;
+// Optional: map a project id to a stable, publicly reachable photo URL, e.g. PHOTO["denim-tote"] = "https://.../tote.jpg".
+// Any missing or broken image automatically falls back to the built-in illustration, so cards never show a broken image.
+const PHOTO = {};
+const FABS = ["Cotton", "Denim", "Wool", "Silk", "Polyester", "Linen"];
+const shade = (hex, a) => { const m = /^#?([0-9a-f]{6})$/i.exec(hex || ""), v = m ? m[1] : "3b6ea5"; return "#" + [0, 2, 4].map((i) => parseInt(v.slice(i, i + 2), 16)).map((x) => Math.max(0, Math.min(255, Math.round(a < 0 ? x * (1 + a) : x + (255 - x) * a))).toString(16).padStart(2, "0")).join(""); };
+const TEE = (c, y = 156) => `<path d="M82 24L36 56l20 30 22-12v${y - 74}h84V74l22 12 20-30-46-32q-20 16-52 0z" fill="${c}"/>`;
+const SQ = (c, d, l, x0, y0, s, nx, ny) => { let o = ""; for (let i = 0; i < nx; i++) for (let j = 0; j < ny; j++) o += `<rect x="${x0 + i * s}" y="${y0 + j * s}" width="${s - 2}" height="${s - 2}" fill="${(i + j) % 3 === 0 ? c : (i + j) % 3 === 1 ? l : d}"/>`; return o; };
+const SHP = {
+  tote: (c, d, l) => `<path d="M80 62q0-42 40-42t40 42" fill="none" stroke="${d}" stroke-width="7"/><path d="M62 62h116l-9 98H71z" fill="${c}"/><path d="M68 74h104" stroke="#fff9" stroke-dasharray="4 3"/><rect x="95" y="104" width="50" height="38" rx="4" fill="${l}"/>`,
+  patchbag: (c, d, l) => `<path d="M80 62q0-42 40-42t40 42" fill="none" stroke="${d}" stroke-width="7"/><path d="M62 62h116l-9 98H71z" fill="${c}"/>${SQ(l, d, c, 80, 76, 20, 4, 3)}`,
+  pouch: (c, d, l) => `<rect x="46" y="62" width="148" height="82" rx="16" fill="${c}"/><path d="M46 84h148" stroke="${d}" stroke-width="4"/><path d="M58 78h124" stroke="#fffb" stroke-dasharray="5 4"/><circle cx="172" cy="84" r="7" fill="${l}"/>`,
+  cushion: (c, d, l) => `<rect x="42" y="28" width="156" height="124" rx="28" fill="${c}"/><circle cx="120" cy="90" r="8" fill="${l}"/><path d="M56 44q64 12 128 0M56 136q64-12 128 0" stroke="${d}" fill="none" opacity=".5"/>`,
+  basket: (c, d, l) => `<path d="M52 56h136l-15 100H67z" fill="${c}"/><ellipse cx="120" cy="56" rx="68" ry="12" fill="${d}"/><path d="M60 88h120M64 120h112" stroke="#fff7" stroke-dasharray="6 4"/>`,
+  hanger: (c, d, l) => `<circle cx="120" cy="14" r="7" fill="none" stroke="${d}" stroke-width="4"/><path d="M120 21v30M120 51L82 118M120 51l38 67M120 51v67" stroke="${d}" stroke-width="5" fill="none"/><path d="M78 118h84l-11 44H89z" fill="${c}"/><path d="M104 118q16-34 32 0" fill="#6b9a6f"/>`,
+  cloth: (c, d, l) => `<rect x="46" y="52" width="88" height="88" rx="4" fill="${c}" transform="rotate(-8 90 96)"/><rect x="104" y="40" width="88" height="88" rx="4" fill="${l}" stroke="${d}" transform="rotate(7 148 84)"/>`,
+  napkin: (c, d, l) => `<rect x="50" y="44" width="110" height="110" fill="${c}" transform="rotate(-6 105 99)"/><path d="M60 58h90v90H60z" fill="none" stroke="#fffa" stroke-dasharray="4 3" transform="rotate(-6 105 99)"/><path d="M178 40v70M170 40v22M178 40v22M186 40v22" stroke="${d}" stroke-width="3"/>`,
+  headband: (c, d, l) => `<path d="M34 128Q120-20 206 128" fill="none" stroke="${c}" stroke-width="22" stroke-linecap="round"/><path d="M96 54q24-12 48 0M100 66q20-9 40 0" stroke="${d}" stroke-width="3" fill="none"/>`,
+  scrunchie: (c, d, l) => `<circle cx="120" cy="90" r="48" fill="none" stroke="${c}" stroke-width="30"/><circle cx="120" cy="90" r="48" fill="none" stroke="${d}" stroke-width="30" stroke-dasharray="5 11" opacity=".35"/>`,
+  hairtie: (c, d, l) => `<path d="M120 90L56 54v72zM120 90l64-36v72z" fill="${c}"/><path d="M120 90L56 90M120 90h64" stroke="${d}" opacity=".4"/><rect x="108" y="76" width="24" height="28" rx="8" fill="${d}"/>`,
+  flower: (c, d, l) => `<path d="M120 122v44" stroke="#5f8f66" stroke-width="5"/>${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="120" cy="52" rx="20" ry="32" fill="${a % 144 ? c : l}" transform="rotate(${a} 120 86)"/>`).join("")}<circle cx="120" cy="86" r="13" fill="${d}"/>`,
+  apron: (c, d, l) => `<path d="M88 18h64v36l24 106H64l24-106z" fill="${c}"/><path d="M88 18q32 36 64 0" fill="none" stroke="${d}" stroke-width="4"/><rect x="98" y="104" width="44" height="32" rx="4" fill="${l}"/><path d="M64 160l-24 6M176 160l24 6" stroke="${d}" stroke-width="4"/>`,
+  skirt: (c, d, l) => `<path d="M88 30h64l36 126H52z" fill="${c}"/><rect x="88" y="26" width="64" height="12" fill="${d}"/><path d="M110 40l-16 114M130 40l16 114" stroke="#fff5"/>`,
+  rug: (c, d, l) => `<ellipse cx="120" cy="100" rx="98" ry="54" fill="${c}"/><ellipse cx="120" cy="100" rx="74" ry="40" fill="${l}"/><ellipse cx="120" cy="100" rx="50" ry="27" fill="${d}"/><ellipse cx="120" cy="100" rx="26" ry="14" fill="${c}"/>`,
+  wrap: (c, d, l) => `<rect x="52" y="62" width="136" height="94" rx="6" fill="${c}"/><path d="M120 62v94M52 108h136" stroke="${d}" stroke-width="10"/><path d="M120 62q-36-36-46-8t46 8q36-36 46-8t-46 8" fill="${l}" stroke="${d}"/>`,
+  scarf: (c, d, l) => `<path d="M52 40q68 46 136 0v28q-68 46-136 0z" fill="${c}"/><path d="M148 66l20 92h32l-14-90z" fill="${c}"/><path d="M168 154h34" stroke="${d}" stroke-dasharray="3 3"/><path d="M60 52q60 38 120 0" stroke="${l}" fill="none"/>`,
+  mitt: (c, d, l) => `<rect x="60" y="48" width="120" height="84" rx="22" fill="${c}"/>${[0, 1, 2, 3, 4, 5].map((i) => `<path d="M${78 + i * 17} 50v80" stroke="${d}" opacity=".35" stroke-width="3"/>`).join("")}<ellipse cx="120" cy="90" rx="22" ry="12" fill="#00000033"/>`,
+  coaster: (c, d, l) => `<circle cx="92" cy="98" r="46" fill="${c}"/><circle cx="148" cy="84" r="46" fill="${l}" stroke="${d}"/><circle cx="148" cy="84" r="34" fill="none" stroke="${d}" stroke-dasharray="4 4"/>`,
+  bookmark: (c, d, l) => `<rect x="84" y="12" width="72" height="152" rx="6" fill="${c}"/><rect x="84" y="46" width="72" height="26" fill="${l}"/><rect x="84" y="92" width="72" height="26" fill="${d}"/><path d="M120 164v12M112 164v12M128 164v12" stroke="${d}" stroke-width="3"/>`,
+  frame: (c, d, l) => `<rect x="46" y="24" width="148" height="132" fill="#c8a97e"/><rect x="60" y="38" width="120" height="104" fill="${c}"/>${SQ(l, d, c, 72, 52, 24, 4, 3)}`,
+  art: (c, d, l) => `<rect x="48" y="26" width="144" height="128" fill="#f4efe3" stroke="#00000022"/><path d="M62 128q30-70 60-30t56-52v84H62z" fill="${c}"/><circle cx="150" cy="62" r="16" fill="${l}"/><path d="M62 128q40-40 80-6" stroke="${d}" stroke-width="5" fill="none"/>`,
+  jewelry: (c, d, l) => `<path d="M48 38Q120 170 192 38" fill="none" stroke="${d}" stroke-width="3"/>${[[60, 62], [76, 88], [96, 106], [120, 112], [144, 106], [164, 88], [180, 62]].map((p, i) => `<circle cx="${p[0]}" cy="${p[1]}" r="9" fill="${i % 2 ? l : c}" stroke="${d}"/>`).join("")}`,
+  lamp: (c, d, l) => `<path d="M82 36h76l26 74H56z" fill="${c}"/><path d="M82 36h76M56 110h128" stroke="${d}" stroke-width="5"/><path d="M96 50l-14 56M120 44v66M144 50l14 56" stroke="#fff5"/><rect x="114" y="112" width="12" height="40" fill="${d}"/><rect x="90" y="152" width="60" height="10" rx="4" fill="${d}"/>`,
+  garland: (c, d, l) => `<path d="M16 36Q120 96 224 36" fill="none" stroke="${d}" stroke-width="3"/>${[[44, 56], [80, 72], [120, 80], [160, 72], [196, 56]].map((p, i) => `<circle cx="${p[0]}" cy="${p[1] + 14}" r="16" fill="${i % 2 ? l : c}"/>`).join("")}`,
+  wallorg: (c, d, l) => `<rect x="46" y="14" width="148" height="150" rx="8" fill="${d}" opacity=".4"/><rect x="60" y="40" width="54" height="48" rx="6" fill="${c}"/><rect x="126" y="40" width="54" height="48" rx="6" fill="${c}"/><rect x="60" y="102" width="120" height="50" rx="6" fill="${l}"/><path d="M60 64h54M126 64h54" stroke="#fff8" stroke-dasharray="4 3"/>`,
+  organizer: (c, d, l) => `<rect x="40" y="52" width="160" height="96" rx="10" fill="${c}"/><path d="M92 52v96M146 52v96M40 100h160" stroke="${d}" stroke-width="4"/><rect x="46" y="58" width="40" height="36" rx="4" fill="${l}"/><path d="M48 142h144" stroke="#fff8" stroke-dasharray="5 4"/>`,
+  sleeve: (c, d, l) => `<rect x="46" y="44" width="148" height="104" rx="12" fill="${c}"/><path d="M46 70h148" stroke="${d}" stroke-width="3"/><circle cx="120" cy="106" r="9" fill="${l}"/><path d="M56 138h128" stroke="#fff8" stroke-dasharray="5 4"/>`,
+  backpack: (c, d, l) => `<rect x="64" y="34" width="112" height="126" rx="36" fill="${c}"/><rect x="82" y="102" width="76" height="44" rx="10" fill="${l}"/><path d="M90 40q30-36 60 0" fill="none" stroke="${d}" stroke-width="7"/><path d="M82 90h76" stroke="${d}" stroke-width="3"/>`,
+  quilt: (c, d, l) => `<rect x="36" y="26" width="168" height="130" fill="#00000018"/>${SQ(c, d, l, 38, 28, 41, 4, 3)}`,
+  runner: (c, d, l) => `<path d="M14 70h212l-8 44H22z" fill="${c}"/><path d="M20 78h200M24 106h192" stroke="${l}" stroke-dasharray="5 4"/><ellipse cx="120" cy="92" rx="20" ry="8" fill="${l}"/>`,
+  yarn: (c, d, l) => `<circle cx="100" cy="98" r="50" fill="${c}"/><path d="M60 80q40 20 80-6M56 108q44 24 88-6M70 140q32 10 60-2" stroke="${l}" stroke-width="5" fill="none"/><path d="M146 120q40 20 52 42" stroke="${c}" stroke-width="8" fill="none" stroke-linecap="round"/>`,
+  wallhang: (c, d, l) => `<rect x="36" y="22" width="168" height="7" rx="3" fill="#8a6a4a"/>${[0, 1, 2, 3, 4, 5, 6, 7].map((i) => `<path d="M${50 + i * 20} 29v${60 + (i % 3) * 24}" stroke="${i % 2 ? c : l}" stroke-width="13" stroke-linecap="round"/>`).join("")}`,
+  drawstring: (c, d, l) => `<path d="M62 52h116l12 108H50z" fill="${c}"/><path d="M62 52q58 22 116 0" fill="none" stroke="${d}" stroke-width="4"/><path d="M120 62v36M112 98l8 14 8-14" stroke="${l}" stroke-width="4" fill="none"/>`,
+  restyle: (c, d, l) => `${TEE(c)}<path d="M78 112h84" stroke="${l}" stroke-width="7"/><path d="M92 36q28 20 56 0" stroke="${d}" stroke-width="3" fill="none"/>`,
+  layer: (c, d, l) => `<rect x="62" y="34" width="116" height="122" rx="8" fill="${l}"/>${TEE(c)}<path d="M92 30l28 44 28-44v126H92z" fill="${d}" opacity=".85"/>`,
+  oversize: (c, d, l) => `<path d="M72 22L10 62l26 38 24-14v70h120V86l24 14 26-38-62-40q-22 18-56 0z" fill="${c}"/><path d="M12 64l24 36M228 64l-26 36" stroke="${d}" stroke-width="3"/>`,
+  crop: (c, d, l) => `${TEE(c, 122)}<path d="M72 122h96" stroke="#fff" stroke-dasharray="4 4" stroke-width="2"/><path d="M180 128l14-14M180 114l14 14" stroke="${d}" stroke-width="3"/>`,
+  patch: (c, d, l) => `${TEE(c)}<rect x="92" y="94" width="30" height="30" rx="3" fill="${l}"/><rect x="126" y="112" width="26" height="26" rx="3" fill="${d}"/><path d="M95 97h24v24H95z" fill="none" stroke="#fff" stroke-dasharray="3 2"/>`,
+  embroider: (c, d, l) => `${TEE(c)}${[0, 72, 144, 216, 288].map((a) => `<ellipse cx="120" cy="96" rx="6" ry="13" fill="none" stroke="${l}" stroke-width="2.5" stroke-dasharray="3 2" transform="rotate(${a} 120 108)"/>`).join("")}<circle cx="120" cy="108" r="4" fill="${l}"/>`,
+  dye: (c, d, l) => `${TEE(c)}<path d="M78 74h84v82H78z" fill="${d}" opacity=".45"/><path d="M78 74h84v34H78z" fill="${l}" opacity=".5"/>`,
+  trim: (c, d, l) => `${TEE(c)}${[0, 1, 2, 3, 4, 5, 6].map((i) => `<circle cx="${84 + i * 12}" cy="146" r="4.5" fill="${i % 2 ? l : d}"/>`).join("")}<circle cx="120" cy="44" r="4" fill="${l}"/>`,
+  mend: (c, d, l) => `${TEE(c)}<path d="M104 104h32v26h-32z" fill="${l}" opacity=".6"/>${[0, 1, 2, 3, 4].map((i) => `<path d="M${106 + i * 6} 102v30" stroke="${d}" stroke-width="2"/>`).join("")}${[0, 1, 2, 3].map((i) => `<path d="M102 ${108 + i * 7}h38" stroke="#fff" stroke-width="1.5"/>`).join("")}`,
+  shorts: (c, d, l) => `<path d="M64 28h112l14 110h-58l-12-62-12 62H50z" fill="${c}"/><rect x="64" y="24" width="112" height="12" fill="${d}"/><path d="M50 134h60M130 134h60" stroke="${l}" stroke-dasharray="3 3"/>`,
+  knot: (c, d, l) => `${TEE(c, 124)}<circle cx="120" cy="120" r="10" fill="${d}"/><path d="M110 124l-12 16M130 124l12 16" stroke="${d}" stroke-width="6" stroke-linecap="round"/>`
+};
+const Pic = ({ fam, hex, label }) => {
+  const c = shade(hex, 0), d = shade(hex, -.28), l = shade(hex, .45), f = SHP[fam] || SHP.cloth;
+  return E("svg", { viewBox: "0 0 240 180", role: "img", "aria-label": label, style: { width: "100%", height: "100%", display: "block" }, dangerouslySetInnerHTML: { __html: `<defs><linearGradient id="insbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef3e8"/><stop offset="1" stop-color="#d6e2cf"/></linearGradient></defs><rect width="240" height="180" fill="url(#insbg)"/><ellipse cx="120" cy="167" rx="80" ry="8" fill="#00000022"/>${f(c, d, l)}` } });
+};
+function PImg({ p, hex }) {
+  const [bad, setBad] = useState(false), u = PHOTO[p.id];
+  return u && !bad ? E("img", { src: u, alt: p.title + " \u2014 finished example", loading: "lazy", onError: () => setBad(true) }) : E(Pic, { fam: p.fam, hex, label: p.title + " \u2014 sample illustration" });
+}
+// method = how the project is made (steps, tools, materials). sew: 1 = needs sewing.
+const METH = {
+  strip: { sew: 0, tools: "Fabric scissors, ruler, a ring or hook (if hanging)", need: "Old garment, washed and dried", st: "Wash, dry and flatten the garment|Cut the fabric into even strips about 2\u20133 cm wide|Stretch each strip so the edges curl in neatly|Knot, braid or wrap the strips into your {t}|Test that it holds its shape, then trim loose ends" },
+  cutknot: { sew: 0, tools: "Scissors, ruler, tailor's chalk", need: "Old tee or sweater, cushion insert (if making a cover)", st: "Wash and lay the garment flat|Cut off sleeves and neckline as needed for your {t}|Cut a 2 cm wide fringe about 8 cm deep along the open edge|Knot the front fringe to the back fringe in pairs|Test it, then trim the knot ends" },
+  glue: { sew: 0, tools: "Scissors, fabric glue or iron-on tape, brush, ruler", need: "Flat fabric pieces from your garment, fabric glue or iron-on tape, a base (card, frame, board or pot)", st: "Wash, press and cut usable flat areas away from any damage|Arrange the pieces for your {t} before sticking anything|Glue or iron on the pieces layer by layer, pressing firmly|Let it dry fully (usually 12\u201324 hours) under a light weight|Trim the edges, finish and display or use it" },
+  cut: { sew: 0, tools: "Sharp scissors, ruler, tailor's chalk", need: "Old garment, washed and pressed", st: "Wash and press the garment|Mark the shape of your {t} with chalk|Cut along the lines in smooth, single strokes|Fold, knot or shape the fabric into its final form|Trim loose threads and test it" },
+  bag: { sew: 1, tools: "Scissors, sewing machine or needle and thread, pins, ruler", need: "Old garment in sturdy fabric, strong thread, optional lining", st: "Wash the garment and cut off pockets, legs or sleeves as needed|Cut two matching panels plus two straps for your {t}|Sew the sides and bottom with right sides together|Attach the straps securely with a box stitch|Turn out, hem the top and press" },
+  pouch: { sew: 1, tools: "Scissors, sewing machine or needle and thread, pins, zip or button", need: "Sturdy fabric offcut, zip or button, thread", st: "Cut two rectangles for your {t}|Attach the zip or button closure along the top edges|Sew the sides and bottom, right sides together|Clip the corners and turn right side out|Press and test the closure" },
+  cushion: { sew: 1, tools: "Scissors, sewing machine or needle and thread, pins, tape measure", need: "Garment fabric, thread, cushion insert, optional buttons", st: "Measure your cushion insert|Cut a front square and two overlapping back panels|Hem the inner edge of each back panel|Sew all four sides, right sides together|Turn out and insert the cushion" },
+  panel: { sew: 1, tools: "Scissors, sewing machine or needle and thread, pins, iron, ruler", need: "Garment fabric, thread, optional interfacing or stiff lining", st: "Wash, press and plan the pieces for your {t}|Cut the panels plus any straps, ties or pockets|Hem or reinforce the raw edges|Sew the main seams, then add the details|Press and test it" },
+  skirt: { sew: 1, tools: "Seam ripper, scissors, sewing machine or needle, pins, tape measure", need: "Old garment, thread, elastic or zip if needed, spare panel fabric", st: "Try the garment on and mark your skirt length|Unpick the seams and cut to shape|Add a panel or reshape as needed|Sew the new seam and waistband|Hem and press" },
+  small: { sew: 1, tools: "Scissors, needle and thread, safety pin", need: "Fabric strip about 10 x 50 cm, 20 cm of elastic", st: "Cut a long strip from the garment|Fold lengthwise, right sides together, and sew into a tube|Thread the elastic through using a safety pin|Tie the elastic ends together|Join the fabric ends and stitch closed" },
+  quilt: { sew: 1, tools: "Scissors or rotary cutter, ruler, sewing machine, pins, iron", need: "Several old garments, batting, backing fabric, thread", st: "Wash the garments and cut into equal squares|Lay out the squares and arrange the pattern|Sew squares into rows, then join the rows|Layer with batting and backing and baste|Quilt and bind the edges" }
+};
+const WM = {
+  restyle: "Lay the garment out and decide what to change|Pick one change: hem, sleeves, neckline or fit|Try it on and pin the new shape|Make the change (cut, tuck or stitch)|Style it with accessories and wear it",
+  layer: "Choose a base piece from your wardrobe|Add a contrasting layer such as a vest, shirt or jacket|Mix lengths and textures|Check the proportions in a mirror|Photograph the look and save it",
+  oversize: "Wear it open or buttoned wrong way up for a relaxed drape|Roll or cuff the sleeves|Front-tuck or knot the hem|Pair with a fitted bottom or belt|Finish with simple accessories",
+  crop: "Try it on and mark the new hem with chalk|Lay flat and check the line is level|Cut 2 cm below the mark|Hem it, or leave raw on knit fabric|Press and style it",
+  patch: "Pick patches or fabric scraps and decide where they go|Pin them in place|Iron on or stitch around the edges|Add a decorative stitch if you like|Wash inside out the first time",
+  embroider: "Choose a simple motif|Transfer it with a washable pen|Place the fabric in a hoop|Stitch with backstitch or running stitch|Knot behind, trim and press",
+  dye: "Check the fibre: natural fabrics take dye best and polyester may not|Wash the garment and keep it damp|Mix the dye as instructed|Soak and stir for 30\u201360 minutes|Rinse until clear, wash separately and dry",
+  trim: "Choose buttons, beads, ribbon or lace|Plan where the trims go|Pin them in place|Stitch securely|Check for anything loose",
+  mend: "Wash the garment and locate the damage|Choose a contrasting thread or patch|Stitch a visible mend (darning, sashiko or patch)|Add a matching detail elsewhere|Press and wear",
+  shorts: "Try on and mark the length above the knee|Cut straight 3 cm below the mark|Fold and roll the hem, or leave it to fray|Wash to soften the raw edge|Style with a tee",
+  knot: "Pick a hem you can lift|Gather the front corners|Knot or twist them|Adjust until it sits well|Wear it"
+};
+const WSEW = { restyle: "Optional", layer: "No", oversize: "No", crop: "Optional", patch: "Optional", embroider: "Yes", dye: "No", trim: "Optional", mend: "Yes", shorts: "No", knot: "No" };
+// id|title|image family|difficulty 1-3|minutes|tags|fabrics (g = general textile)|garment types|method|description
+const mkP = (row, wear) => { const a = row.split("|"); return { id: a[0], title: a[1], fam: a[2], d: +a[3], min: +a[4], tags: a[5], fab: a[6], types: a[7], m: wear ? a[2] : a[8], desc: a[9], wear: !!wear }; };
+const PROJ = [
+  "tee-hanger|T-shirt Plant Hanger|hanger|1|25|home creative|Cotton Polyester|T-Shirt Top Hoodie|strip|Cut an old tee into strips and knot a hanging holder for a small pot.",
+  "denim-planter|Denim Plant Holder|hanger|1|20|home creative|Denim|Jeans Trousers Shorts Jackets|cut|Fold a cut denim leg into a sturdy cover or hanging holder for a plant pot.",
+  "nosew-tote|No-Sew T-shirt Tote Bag|tote|1|20|home gift|Cotton Polyester g|T-Shirt Top Hoodie|cutknot|Cut and knot a tee into a market bag with no needle needed.",
+  "tee-basket|T-shirt Yarn Storage Basket|basket|2|60|home creative|Cotton Polyester|T-Shirt Top|strip|Coil and knot tee strips into a soft, decorative storage basket.",
+  "nosew-headband|No-Sew Twist Headband|headband|1|10|gift|Cotton Polyester Silk g|*|cut|Twist a fabric strip into a stretchy headband in minutes.",
+  "braid-rug|Braided Fabric Mat|rug|2|90|home|Cotton Polyester Wool|*|strip|Braid fabric strips and coil them into a small mat, held with glue or lacing.",
+  "denim-braid|Denim Braided Mat|rug|2|120|home|Denim|Jeans Trousers Shorts Jackets|strip|Braid denim strips into a hard-wearing doorway or bath mat.",
+  "furoshiki|Furoshiki Gift Wrap|wrap|1|10|gift|Silk Cotton Linen Polyester g|Shirt Dresses Saree Top Kurta|cut|Wrap presents in a reusable square of fabric instead of paper.",
+  "cleaning-cloth|Reusable Cleaning Cloths|cloth|1|10|home|Cotton Linen Polyester g|*|cut|Cut worn fabric into washable cloths for dusting and wiping.",
+  "nosew-cushion|No-Sew Knotted Cushion Cover|cushion|1|30|home gift|Cotton Wool Polyester Linen|T-Shirt Sweater Hoodie Shirt|cutknot|Knot the cut edges of a sweater or tee around a cushion insert.",
+  "tee-yarn|T-shirt Yarn|yarn|1|15|creative|Cotton Polyester|T-Shirt Top|strip|Cut one continuous spiral strip to make stretchy yarn for crafts.",
+  "hang-organizer|Hanging Pocket Organizer|wallorg|2|40|home|Denim Cotton Polyester Linen|Jeans Trousers Shorts Shirt Jackets|glue|Keep the pockets, fix them to a board with fabric adhesive and hang it as a wall organizer.",
+  "denim-basket|No-Sew Denim Storage Basket|basket|2|45|home|Denim|Jeans Trousers Shorts Jackets|glue|Fold and glue a denim leg into a standing storage basket.",
+  "fab-flowers|No-Sew Fabric Flowers|flower|1|20|creative gift|Silk Cotton Linen Polyester g|*|glue|Layer glued petals into flowers for decor, hair or gift toppers.",
+  "coasters|Fabric Coasters|coaster|1|20|home gift|Denim Cotton Linen Wool g|*|glue|Layer and glue circles of fabric into sturdy coasters.",
+  "keepsake|Memory Keepsake Frame|frame|1|20|creative gift|Cotton Denim Silk Linen Wool g|*|glue|Frame a patch of a favourite garment as a keepsake.",
+  "collage|Fabric Collage Art|art|1|45|creative|g|*|glue|Layer fabric scraps into a picture for the wall.",
+  "denim-art|Denim Patch Artwork|art|2|60|creative|Denim|Jeans Trousers Shorts Jackets|glue|Arrange different denim shades into a landscape or abstract artwork.",
+  "patch-wall|Patchwork Wall Art|quilt|2|60|creative home|Denim Cotton Linen|*|glue|Glue square patches onto a canvas for a colourful wall piece.",
+  "wall-hang|Textile Wall Hanging|wallhang|2|90|creative home|Wool Cotton Linen Polyester|*|strip|Knot fabric strips along a stick for a boho wall hanging.",
+  "jewelry|Fabric Bead Jewellery|jewelry|2|40|creative gift|Silk Cotton Polyester|*|glue|Roll fabric into beads and thread them into a necklace.",
+  "bookmark|Patchwork Bookmark|bookmark|1|15|gift creative|g|*|glue|Stack fabric strips into a colourful bookmark.",
+  "lampshade|Fabric Lampshade Cover|lamp|2|45|creative home|Cotton Linen Silk Polyester|*|glue|Give a plain lampshade new life with a fabric cover (use LED bulbs only).",
+  "silk-scarf|Decorative Silk Scarf|scarf|1|10|gift|Silk Polyester|Shirt Dresses Saree Top Kurta|cut|Cut a flowing scarf from a silky shirt, dress or saree.",
+  "silk-bow|Silk Hair Bow|hairtie|1|10|gift|Silk Polyester|Shirt Dresses Saree Top Kurta|cut|Fold and tie a silky offcut into a hair bow.",
+  "wool-cowl|Sweater Cowl Scarf|scarf|1|15|gift|Wool|Sweater Coat Jackets Hoodie|cut|Cut the body of a knitted sweater into a warm cowl.",
+  "wrist-warmers|Cosy Wrist Warmers|mitt|1|15|gift|Wool|Sweater Coat Jackets Hoodie|cut|Turn sweater sleeves into warm wrist warmers with a thumb hole.",
+  "wool-garland|Wool Pom-pom Garland|garland|1|30|home creative gift|Wool Cotton|*|strip|Wrap fabric strips into pom-poms and string them as decor.",
+  "denim-tote|Denim Tote Bag|tote|1|45|home gift|Denim|Jeans Trousers Shorts Skirt Jackets|bag|Turn an old pair of jeans into a reusable everyday tote bag.",
+  "cotton-tote|Everyday Tote Bag|tote|1|40|home gift|Cotton Linen Polyester g|Shirt T-Shirt Dresses Saree Top Hoodie|bag|Sew a roomy shopping tote from a shirt or dress.",
+  "pouch|Zipper Pouch|pouch|2|45|gift|Denim Cotton Linen Polyester Wool g|*|pouch|Make a small zip pouch for pens, make-up or cables.",
+  "denim-pouch|Easy Denim Pouch|pouch|1|30|gift|Denim|Jeans Trousers Shorts Jackets|pouch|Sew a button-closure pouch from a jeans leg.",
+  "env-cushion|Envelope Cushion Cover|cushion|1|40|home gift|Cotton Linen Wool Silk Polyester Denim g|*|cushion|Sew a simple cover with an overlapping back, no zip needed.",
+  "denim-skirt|Denim Skirt Transformation|skirt|3|120|creative|Denim|Jeans Trousers Shorts Skirt|skirt|Unpick and reshape old jeans into a fresh skirt.",
+  "dress-skirt|Skirt from Dress or Saree|skirt|3|90|creative|Cotton Silk Linen Polyester|Dresses Saree Skirt Shirt|skirt|Rework a dress or saree into a flowing skirt.",
+  "patch-bag|Patchwork Bag|patchbag|3|120|creative|Denim Cotton Linen|*|bag|Piece together scraps into a one-of-a-kind patchwork bag.",
+  "laptop-sleeve|Laptop Sleeve|sleeve|2|60|gift|Denim Wool Polyester Cotton|Jeans Jackets Sweater Coat Trousers Hoodie|panel|Sew a padded sleeve that fits your laptop snugly.",
+  "fab-basket|Fabric Storage Basket|basket|2|60|home|Denim Cotton Linen Polyester g|*|panel|Stitch panels over a stiff lining into a standing basket.",
+  "apron|Simple Apron|apron|1|50|home gift|Cotton Denim Linen g|Shirt Jeans Dresses Trousers|panel|Turn a shirt or jeans into a kitchen apron with a pocket.",
+  "quilt-org|Quilted Organizer|organizer|3|90|home|Cotton Denim Linen Polyester|*|panel|Quilt layers into a compartment tray for desks or drawers.",
+  "backpack|Upcycled Backpack|backpack|3|150|creative|Denim Polyester Nylon Cotton|Jeans Jackets Trousers Coat|bag|Rebuild strong fabric into a backpack with straps and a pocket.",
+  "scrunchie|Fabric Scrunchie|scrunchie|1|15|gift|Cotton Silk Polyester g|*|small|Make a soft scrunchie from a spare strip of fabric.",
+  "mem-quilt|Memory Quilt|quilt|3|240|creative gift|Cotton Denim Linen|*|quilt|Piece squares from favourite garments into a quilt full of memories.",
+  "runner|Table Runner|runner|2|60|home|Linen Cotton|*|panel|Sew a table runner from a large shirt, dress or fabric piece.",
+  "napkins|Cloth Napkins|napkin|1|30|home gift|Linen Cotton|*|panel|Hem squares of fabric into reusable napkins.",
+  "denim-org|Denim Pocket Organizer|wallorg|1|35|home|Denim|Jeans Trousers Shorts Jackets|panel|Sew jeans pockets onto a panel as a wall or desk organizer.",
+  "mini-bag|Mini Drawstring Bag|drawstring|1|35|gift|Cotton Polyester Nylon Linen Silk g|*|panel|Sew a small drawstring bag for gifts and travel."
+].map((r) => mkP(r));
+const WEARP = [
+  "w-restyle|Style Transformation|restyle|1|20||*|*|restyle|Change one thing, such as the hem, sleeves or neckline, to give it a fresh look.",
+  "w-layer|Layering Ideas|layer|1|10||*|*|layer|Combine it with other pieces you own for new outfits.",
+  "w-oversize|Oversized Styling|oversize|1|10||*|Shirt T-Shirt Hoodie Jackets Sweater Top Kurta Coat|oversize|Style a roomy garment on purpose with cuffs, tucks and belts.",
+  "w-crop|Crop & Rework|crop|2|30||Cotton Denim Polyester Linen|T-Shirt Shirt Hoodie Top Sweater Sportswear|crop|Shorten it into a cropped piece that fits your style.",
+  "w-patch|Add Patches|patch|1|30||*|*|patch|Cover wear or add personality with patches.",
+  "w-embroider|Embroidery Accents|embroider|2|60||Cotton Denim Linen Silk Wool|*|embroider|Stitch a small motif to personalise it.",
+  "w-dye|Re-dye Your Garment|dye|2|90||Cotton Denim Linen Silk Wool|*|dye|Refresh faded colour with dye or a new shade.",
+  "w-trim|Decorative Trims|trim|1|40||*|*|trim|Add buttons, beads, ribbon or lace.",
+  "w-mend|Visible Mending & Restyle|mend|2|45||*|*|mend|Turn a repair into a design feature.",
+  "w-shorts|Jeans to Cut-off Shorts|shorts|1|30||Denim|Jeans Trousers|shorts|Cut worn jeans into summer shorts.",
+  "w-knot|Knot & Tie Hem Refresh|knot|1|5||Cotton Linen Polyester|T-Shirt Shirt Top Kurta|knot|Knot or tie the hem to change the silhouette in seconds."
+].map((r) => mkP(r, 1));
+const FW = { Denim: "Denim is durable and holds its shape, so it suits bags, baskets and organizers.", Cotton: "Cotton is soft, easy to cut and washes well, so it suits everyday home and carry items.", Wool: "Wool is warm and cosy, and knitted wool doesn't fray when cut, so it suits winter and decor items.", Silk: "Silk is smooth and delicate, so it suits light, low-stress accessories and gifting.", Polyester: "Polyester is strong and fray-resistant, so it suits bags, organizers and cloths.", Linen: "Linen is crisp and sturdy, so it suits table and home textiles." };
+const PW = { nosew: "This project needs no sewing at all.", easy: "It is beginner-friendly.", sew: "It is a rewarding sewing project.", creative: "It turns fabric into a decorative piece.", home: "It gives the fabric a useful job at home.", gift: "It makes a thoughtful handmade gift.", wear: "It keeps the garment in use instead of converting it into something else." };
+const sewOf = (p) => p.wear ? WSEW[p.fam] : METH[p.m].sew ? "Yes" : "No";
+const fmtT = (m) => { const lo = Math.max(5, Math.round(m * .7 / 5) * 5); return m < 60 ? lo + "\u2013" + m + " min" : (lo / 60).toFixed(1).replace(".0", "") + "\u2013" + (m / 60).toFixed(1).replace(".0", "") + " hr"; };
+// Pure ranking function: fabric + garment type + condition + damage + selected preference
+function inspireList(pref, fk, type, cond, dm) {
+  const known = FABS.includes(fk), loose = ["Unknown", "Other", "Fabric"].includes(type);
+  const gate = (p) => pref === "nosew" ? !METH[p.m].sew : pref === "easy" ? p.d === 1 : pref === "sew" ? !!METH[p.m].sew : p.tags.split(" ").includes(pref);
+  const fabOk = (p) => { const f = p.fab.split(" "); return p.fab === "*" || f.includes("g") || (known && f.includes(fk)); };
+  const typeOk = (p) => p.types === "*" || loose || p.types.split(" ").includes(type);
+  const sco = (p) => { const f = p.fab.split(" "); let s = 52 + (p.fab === "*" ? 8 : known && f.includes(fk) ? 30 : 12); if (p.types !== "*" && p.types.split(" ").includes(type)) s += 8; if (cond === "Worn") s += p.min <= 45 ? 6 : -6; else if (cond === "Good") s += 4; if (dm) s += p.fam === "mend" ? 25 : p.min <= 45 ? 4 : -4; else if (p.fam === "mend") s -= 10; if (/Silk|Wool/.test(fk)) s += p.d === 1 ? 6 : p.d === 3 ? -10 : 0; return Math.max(45, Math.min(97, s)); };
+  return (pref === "wear" ? WEARP : PROJ).filter((p) => fabOk(p) && typeOk(p) && (pref === "wear" || gate(p))).map((p) => ({ ...p, score: sco(p) })).sort((a, b) => b.score - a.score);
+}
+function Inspire({ r, S, pref, d, mat, cond, dm, hex }) {
+  const [lim, setLim] = useState(6), [open, setOpen] = useState(null);
+  const fk = mat.replace(/ \(.*/, ""), known = FABS.includes(fk), pl = PREFS.find((p) => p[0] === pref)[1], ai = r.fabricAI;
+  const list = inspireList(pref, fk, d.type, cond, dm), gl = d.type === "Unknown" ? "garment" : d.type;
+  const why = (p) => PW[pref] + " " + (known && p.fab.split(" ").includes(fk) ? FW[fk] : p.fab === "*" ? "It works with most wearable fabrics." : "It suits general textile materials \u2014 check that your fabric is sturdy enough first.") + (dm ? " Plan your cuts around the " + dm.t.toLowerCase() + "." : cond === "Worn" ? " Small pieces make good use of worn fabric." : "");
+  const mp = open && list.concat(PROJ, WEARP).find((p) => p.id === open);
+  useEffect(() => { if (!open) return; const k = (e) => e.key === "Escape" && setOpen(null); window.addEventListener("keydown", k); return () => window.removeEventListener("keydown", k); }, [open]);
+  const proj = (p) => S.projects.find((x) => x.iid === p.id && x.g === d.name);
+  const start = (p) => { if (!proj(p)) S.setProjects((v) => [...v, { id: "p" + Date.now(), iid: p.id, title: p.title, g: d.name, hex, type: d.type, material: mat, cond, status: "In Progress", started: (/* @__PURE__ */ new Date()).toLocaleDateString(), mins: p.min }]); };
+  const meta = (p) => p.wear ? { tools: "Scissors, chalk, needle and thread (as needed)", need: "Your garment plus small extras (patches, thread, dye or trims)", st: WM[p.fam] } : METH[p.m];
+  const chip = (t, k) => E("span", { className: "chip", key: k || t }, t);
+  const modal = mp && ReactDOM.createPortal(E("div", { className: "card", role: "dialog", "aria-label": mp.title, style: { position: "fixed", inset: 0, zIndex: 30, overflow: "auto", borderRadius: 0, paddingTop: "calc(20px + env(safe-area-inset-top,0px))", paddingBottom: "calc(20px + env(safe-area-inset-bottom,0px))" } },
+    E("div", { style: { maxWidth: 760, margin: "0 auto" } },
+      E("button", { className: "btn o", onClick: () => setOpen(null) }, "\u2190 Back to ideas"),
+      E("div", { className: "im", style: { marginTop: 14, borderRadius: 18 } }, E(PImg, { p: mp, hex })),
+      E("h2", { style: { fontSize: "1.7rem", margin: "14px 0 4px" } }, mp.title),
+      E("p", { style: { margin: 0 } }, mp.desc),
+      E("p", null, chip("Difficulty: " + DIFF[mp.d]), chip("Time: " + fmtT(mp.min)), chip("Sewing required: " + sewOf(mp))),
+      E("div", { className: "ba3" }, E("div", { className: "im sm" }, E("span", { className: "chip", style: { position: "absolute", top: 6, left: 6, background: "var(--g)", color: "#fff" } }, "OLD GARMENT"), E("img", { src: r.img, alt: "Your garment", style: { objectFit: "contain" } })), E("div", { className: "arr sans" }, "\u2192", E("b", null, "\u267B\uFE0F REUSE"), "\u2192"), E("div", { className: "im sm" }, E("span", { className: "chip", style: { position: "absolute", top: 6, left: 6, background: "var(--acc)", color: "#fff" } }, mp.wear ? "REFRESHED" : "NEW PRODUCT"), E(PImg, { p: mp, hex }))),
+      E("div", { className: "card", style: { background: "var(--l)", margin: "12px 0" } }, E("h3", null, "Why this idea?"), E("p", { className: "sans" }, why(mp))),
+      E("h3", null, "What you'll need"), E("p", { className: "sans", style: { margin: "4px 0" } }, meta(mp).need),
+      E("h3", { style: { marginTop: 12 } }, "Tools required"), E("p", { className: "sans", style: { margin: "4px 0" } }, meta(mp).tools),
+      E("h3", { style: { marginTop: 12 } }, "Fabric suitability"), E("p", { className: "sans", style: { margin: "4px 0" } }, known ? (mp.fab.split(" ").includes(fk) || mp.fab === "*" ? "\u2713 " + fk + " \u2014 well suited. " + FW[fk] : fk + " is not a typical match, but this works with general textiles. Test a scrap first.") : "Fabric is \u201c" + mat + "\u201d. Check that it is strong enough, how much it stretches and whether it frays before you start."),
+      dm && E("div", { className: "warn" }, "Your garment has visible " + dm.t.toLowerCase() + " (" + dm.loc + "). Cut around it or reinforce it first."),
+      E("h3", { style: { marginTop: 12 } }, "Steps"),
+      E("ol", { className: "sans", style: { lineHeight: 1.9 } }, meta(mp).st.split("|").map((x, k) => E("li", { key: k }, E("b", null, "Step " + (k + 1)), " \u2014 ", x.replace("{t}", mp.title.toLowerCase())))),
+      E("div", { className: "row" }, E("button", { className: "btn full", disabled: !!proj(mp), onClick: () => start(mp) }, proj(mp) ? "\u2713 Project started \u2014 see My Circular Projects" : "Start this project \u2192"), E("button", { className: "btn o full", onClick: () => setOpen(null) }, "Back to ideas")))), document.body);
+  return E("div", { style: { marginTop: 18 } }, modal,
+    E("h3", { style: { fontSize: "1.4rem" } }, "\u2728 What you can make \u2014 get inspired"),
+    E("div", { className: "card", style: { background: "var(--l)", margin: "10px 0" } },
+      E("p", { className: "sans", style: { margin: 0 } }, E("b", null, "Fabric = " + mat), " \u2192 ", E("b", null, "Reuse preference = " + pl), " \u2192 ", E("b", null, pl.replace(/^\S+ /, "") + " + " + fk + " ideas"), " \u2192 visual cards"),
+      E("p", { style: { margin: "8px 0 0" } }, ai ? [chip("ResNet-50 \u2192 " + ai.resnet50.prediction + " " + Math.round(ai.resnet50.confidence * 100) + "%", "a"), chip("NASNet \u2192 " + ai.nasnet.prediction + " " + Math.round(ai.nasnet.confidence * 100) + "%", "b")] : null, chip("Final fabric: " + mat, "c"), chip("Garment: " + d.type, "d"), chip("Condition: " + cond, "e"), dm ? chip("Damage: " + dm.t, "f") : null)),
+    !known && E("div", { className: "warn" }, "Fabric is \u201c" + mat + "\u201d. These ideas suit general textile materials \u2014 please check the fabric's suitability (strength, stretch, fraying) before making anything."),
+    pref === "wear" && E("p", { className: "note" }, "Keeping it wearable: these ideas extend the garment's life \u2014 none of them turns it into another product."),
+    !list.length ? E("p", null, "No visual ideas match this garment and preference yet \u2014 try another preference.") : E(React.Fragment, null,
+      E("div", { className: "ins" }, list.slice(0, lim).map((p) => E("div", { key: p.id, className: "card h", style: { padding: 0, overflow: "hidden", display: "flex", flexDirection: "column" } },
+        E("div", { className: "im" }, E(PImg, { p, hex }), E("span", { className: "chip", style: { position: "absolute", top: 8, left: 8, background: "var(--g)", color: "#fff" } }, p.score + "% match")),
+        E("div", { style: { padding: 16, display: "flex", flexDirection: "column", gap: 6, flex: 1 } },
+          E("div", { className: "ba sans" }, "Old " + gl + " \u2192 " + p.title),
+          E("h3", null, p.title), E("p", { style: { margin: 0 } }, p.desc),
+          E("div", null, chip("Difficulty: " + DIFF[p.d]), chip("\u23F1 " + fmtT(p.min)), chip("Sewing: " + sewOf(p))),
+          E("p", { className: "sans note", style: { margin: 0 } }, E("b", null, "Materials: "), meta(p).need),
+          E("details", { className: "sans" }, E("summary", { style: { cursor: "pointer", color: "var(--g)" } }, "Why this idea?"), E("p", { style: { margin: "4px 0" } }, why(p))),
+          E("button", { className: "btn", style: { marginTop: "auto" }, onClick: () => setOpen(p.id) }, "View idea"))))),
+      E("p", { className: "note" }, "Showing " + Math.min(lim, list.length) + " of " + list.length + " ideas ranked for your fabric, garment, condition and preference. Sample images are illustrations of the finished idea \u2014 yours will vary."),
+      lim < list.length && E("div", { className: "row" }, E("button", { className: "btn o", onClick: () => setLim(lim + 6) }, "Show more ideas"))));
+}
+ 
+/* ===== RE-THREAD: Passport, evidence, next-life reasoning, repair advisor, project checklist ===== */
+const rtId = (r) => { let h = 7; const s = r.d.name + r.d.type + (r.img || "").length; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return "RT-" + h.toString(36).toUpperCase().padStart(6, "0").slice(0, 6); };
+const lsGet = (k, f) => { try { const v = localStorage.getItem(k); return v == null ? f : JSON.parse(v); } catch (e) { return f; } }, lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+function Passport({ r }) {
+  const id = rtId(r), [story, setStory] = useState(() => lsGet("rethread2:story:" + id, "")), [made] = useState(() => lsGet("rethread2:made:" + id, null) || (/* @__PURE__ */ new Date()).toLocaleDateString()), [saved, setSaved] = useState(false);
+  useEffect(() => lsSet("rethread2:made:" + id, made), []);
+  const f = r.fabric, comp = r.composition, vis = f.visTop || (f.confirmed ? "Confirmed by you" : f.top), dm = r.cond.damage, ai = r.fabricAI;
+  const row = (a, b) => E("p", { className: "sans", style: { margin: "3px 0" }, key: a }, E("b", null, a + ": "), b);
+  return E("div", { className: "card", style: { marginBottom: 16 } }, E("span", { className: "tag" }, "GARMENT PASSPORT"),
+    E("div", { className: "grid g2", style: { alignItems: "center", marginTop: 8 } },
+      E("div", { className: "im", style: { borderRadius: 16 } }, E("img", { src: r.img, alt: r.d.name, style: { objectFit: "contain" } })),
+      E("div", null, E("h3", null, r.d.name), row("Garment type", r.d.type), row("Visual fabric", ai ? ai.finalPrediction + " (visual estimate)" : vis), row("Label composition", comp && comp.rows ? comp.rows.map((x) => x[1] + "% " + x[0]).join(" / ") : "Not verified"), row("Colour", r.d.color), row("Condition", r.cond.overall), row("Visible damage", dm ? dm.t + " (" + dm.sev + ")" : "None detected"), row("AI confidence", f.level), row("Garment ID", id), row("Created", made))),
+    E("h3", { style: { marginTop: 14 } }, "My garment story"), E("p", { className: "note" }, story ? "This garment has a story. What should its next chapter be?" : "Optional \u2014 e.g. \u201cThis shirt was a gift from my mother.\u201d"),
+    E("textarea", { "aria-label": "Garment story", rows: 2, value: story, placeholder: "Add a personal story\u2026", style: { width: "100%", font: "inherit", padding: 10, borderRadius: 12, border: "1px solid var(--line)", background: "var(--card)", color: "var(--ink)" }, onChange: (e) => { setStory(e.target.value); lsSet("rethread2:story:" + id, e.target.value); setSaved(true); } }), saved && E("p", { className: "note" }, "Story saved with this passport."));
+}
+function Evidence({ r }) {
+  const ai = r.fabricAI, comp = r.composition;
+  return E("div", { className: "card", style: { marginBottom: 16 } }, E("h3", null, "How we identified the fabric"),
+    E("div", { className: "grid g2", style: { marginTop: 8 } },
+      E("div", null, E("span", { className: "chip" }, "VISUAL FABRIC ESTIMATE"), ai ? E(React.Fragment, null, E("p", { className: "sans", style: { margin: "6px 0" } }, "ResNet-50: ", E("b", null, ai.resnet50.prediction + " \u2014 " + Math.round(ai.resnet50.confidence * 100) + "%"), E("br"), "NASNet: ", E("b", null, ai.nasnet.prediction + " \u2014 " + Math.round(ai.nasnet.confidence * 100) + "%"), E("br"), "Model agreement: ", E("b", null, ai.agreement)), E("p", { className: "sans" }, "Final visual estimate: ", E("b", null, ai.finalPrediction + " \u2014 " + (ai.confidence * 100).toFixed(0) + "% confidence"))) : E("p", { className: "sans" }, r.fabric.status === "none" ? "Not identified from the photo." : r.fabric.top + " \u2014 " + r.fabric.level + " confidence (" + r.fabric.source + ")")),
+      E("div", null, E("span", { className: "chip" }, "LABEL COMPOSITION"), comp && comp.rows ? E("div", null, comp.rows.map((x) => E("p", { className: "sans", style: { margin: "3px 0" }, key: x[0] }, x[0] + " ", E("b", null, x[1] + "%"))), E("p", { className: "note" }, comp.src + ". The label takes priority for exact fibre composition.")) : E("p", { className: "sans" }, "Not verified \u2014 add a label photo or enter the composition in Fabric Intelligence."))),
+    E("p", { className: "note" }, "Visual fabric identification is an estimate based on image evidence. Visual confidence is never a fibre percentage. Exact fibre composition should be confirmed from a readable garment label."));
+}
+function NextLife({ r }) {
+  const c = r.cond, dm = c.damage, sc = r.rec && r.rec.scores, f = r.fabric.top, worst = Math.max(...c.items);
+  if (!sc || r.d.unassessed) return null;
+  const W = { "Keep wearing": [Math.round((sc.Reuse + sc.Repair) / 2), c.overall === "Good" ? "Good overall condition with only minor visible wear." : "Wear is visible, so check fit and comfort before deciding."], Repair: [sc.Repair, dm ? "The visible " + dm.t.toLowerCase() + " (" + dm.sev + ") looks addressable with a basic repair." : "No visible damage was found, so repair is only needed for small touch-ups."], "Reuse / upcycle": [sc.Reuse, f + " with " + c.overall.toLowerCase() + " condition leaves usable fabric for a new project."], Donate: [sc.Donate, c.overall === "Good" ? "Suitable if the garment is clean and wearable." : "Best if it is clean and still wearable; worn items may not be accepted."], Recycle: [sc.Recycle, "A fallback if the garment is no longer usable. Blends and trims can make recycling harder."] };
+  return E("div", { className: "card", style: { marginBottom: 16 } }, E("h3", null, "What could this garment become next?"), E("p", { className: "note" }, "Next-life suitability \u2014 application-generated scores, not scientific probabilities."), Object.entries(W).map(([k, v]) => E("div", { key: k, style: { margin: "10px 0" } }, E("div", { className: "sans", style: { display: "flex", justifyContent: "space-between" } }, E("b", null, k), E("b", null, v[0])), E("div", { style: { height: 8, borderRadius: 8, background: "var(--l)", overflow: "hidden" } }, E("div", { style: { width: v[0] + "%", height: "100%", background: "var(--g)" } })), E("p", { className: "sans", style: { margin: "4px 0" } }, E("b", null, "Why? "), v[1]))));
+}
+const REPAIRS = [[/seam|stitch|split/, "Loose seam", "Easy", "10\u201315 min", "Needle, thread, scissors", "Turn the garment inside out|Align the edges of the seam|Stitch the damaged section with small, even stitches|Secure the thread with a knot and a back-stitch|Check the repair by pulling gently"], [/hole|tear|rip/, "Hole or tear", "Medium", "20\u201340 min", "Patch fabric, needle, thread, scissors, pins", "Trim loose threads around the hole|Cut a patch larger than the damage|Pin the patch behind the hole|Stitch around the patch edges, then across the hole|Press and check the repair"], [/button/, "Missing button", "Easy", "5\u201310 min", "Button, needle, thread", "Match a button to the others|Mark the position|Stitch through the holes 6\u20138 times|Wind thread around the shank|Knot securely behind"], [/fray|pill|worn/, "Fraying edge", "Easy", "10\u201320 min", "Scissors, thread or fabric glue", "Trim loose threads|Fold the edge under 5 mm|Stitch or glue it down|Secure the thread ends|Check the edge lies flat"], [/stain/, "Stain", "Easy", "15\u201330 min", "Mild detergent, cold water, soft brush", "Blot, don't rub|Rinse from the back with cold water|Apply mild detergent and wait 10 minutes|Rinse and check the stain before drying|Repeat if needed; avoid heat until it's gone"], [/zip/, "Broken zipper", "Medium", "30\u201360 min", "Replacement zip, seam ripper, needle, thread", "Unpick the old zip|Measure and buy a matching zip|Pin the new zip in place|Stitch both sides|Test and secure the ends"]];
+function RepairAdvisor({ r }) {
+  const dm = r.cond.damage; if (!dm) return null;
+  const m = REPAIRS.find((x) => x[0].test(dm.t.toLowerCase())); if (!m) return E("div", { className: "card", style: { marginBottom: 16 } }, E("h3", null, "Repair advisor"), E("p", null, "Visible issue: " + dm.t + " (" + dm.loc + "). Add a damage close-up for step-by-step repair guidance."));
+  return E("div", { className: "card", style: { marginBottom: 16 } }, E("h3", null, "Repair advisor"), E("p", { className: "sans" }, E("b", null, "Issue: "), m[1] + " (" + dm.loc + ")", E("br"), E("b", null, "Difficulty: "), m[2], E("br"), E("b", null, "Estimated time: "), m[3], E("br"), E("b", null, "Tools: "), m[4]), E("ol", { className: "sans", style: { lineHeight: 1.8 } }, m[5].split("|").map((s, i) => E("li", { key: i }, s))), E("p", { className: "note" }, "Based on the visible issue; hidden damage can't be judged from a photo."));
+}
+const CHK = ["Prepare garment", "Measure", "Cut", "Assemble", "Finish", "Complete"];
+function Checklist({ p, S }) {
+  const done = p.done || [], pct = Math.round(done.length / CHK.length * 100);
+  const tog = (i) => S.setProjects((v) => v.map((x) => { if (x.id !== p.id) return x; const d = (x.done || []).includes(i) ? (x.done || []).filter((k) => k !== i) : [...(x.done || []), i]; return { ...x, done: d, status: d.length === CHK.length ? "Completed" : d.length ? "In Progress" : "Not Started" }; }));
+  return E("div", { style: { marginTop: 10 } }, E("div", { className: "sans", style: { display: "flex", justifyContent: "space-between" } }, E("b", null, "Progress"), E("b", null, pct + "%")), E("div", { style: { height: 8, borderRadius: 8, background: "var(--l)", overflow: "hidden", margin: "4px 0 8px" } }, E("div", { style: { width: pct + "%", height: "100%", background: "var(--g)", transition: ".3s" } })), E("div", { className: "row", style: { marginTop: 0 } }, CHK.map((c, i) => E("button", { key: c, className: "node" + (done.includes(i) ? " on" : ""), "aria-pressed": done.includes(i), onClick: () => tog(i) }, (done.includes(i) ? "\u2611 " : "\u2610 ") + c))), pct === 100 && E("p", { className: "sans", style: { color: "var(--g)" } }, E("b", null, "Project completed \uD83C\uDF89")));
+}
+ 
+function ReuseStudio({ r, S }) {
+  const d = r.d, hex = d.hex || "#3b6ea5", mat = r.fabric.top, cond = r.cond.overall, dm = r.cond.damage;
+  const [tab, setTab] = useState("upcycle"), [pref, setPref] = useState(""), [dif, setDif] = useState(0), [tm, setTm] = useState(0), [lim, setLim] = useState(6), [open, setOpen] = useState(null), [pos, setPos] = useState(50), [occ, setOcc] = useState("College"), [sty, setSty] = useState("Streetwear"), [pal, setPal] = useState("Neutrals"), [nl, setNl] = useState(3), [cel, setCel] = useState(null), [tried, setTried] = useState(-1);
+  const warn = /Silk|Wool|Chiffon|Satin|Velvet/.test(mat), stretch = /Elastane|Knit|Jersey/.test(mat) || r.label && r.label.comp.some((x) => x[0] === "Elastane");
+  const own = (i) => i[9] === "*" || i[9].includes(d.type);
+  const sc = (i) => Math.max(45, Math.min(97, 58 + (FAV[mat] && FAV[mat].split(" ").includes(i[0]) ? 10 : 0) + (own(i) ? 22 : 6) + (cond === "Good" ? 8 : cond === "Worn" ? -8 : 0) + (pref && i[8].includes(pref) ? 8 : 0) + (i[6] === 1 ? 4 : 0) - (warn && i[10] ? 12 : 0)));
+  const list = IDEAS.filter((i) => own(i) && (tab === "diy" ? i[8].includes("creative") : i[4] === tab) && (!pref || i[8].includes(pref)) && (!dif || i[6] === dif) && (!tm || i[7] <= tm)).sort((a, b) => sc(b) - sc(a));
+  const ttl = (i) => (d.color === "Unknown" ? "" : d.color + " ") + (mat === "Unknown" ? "" : mat.toLowerCase().replace(/ \(.*/, "") + " ") + i[3].toLowerCase();
+  const isSaved = (i) => S.saved.some((x) => x.iid === i[0] && x.g === d.name), proj = (i) => S.projects.find((p) => p.iid === i[0] && p.g === d.name);
+  const toggle = (i) => S.setSaved((v) => isSaved(i) ? v.filter((x) => !(x.iid === i[0] && x.g === d.name)) : [...v, { iid: i[0], g: d.name, hex }]);
+  const start = (i) => {
+    if (!proj(i)) S.setProjects((v) => [...v, { id: "p" + Date.now(), iid: i[0], title: i[3], g: d.name, hex, type: d.type, material: mat, cond, status: "In Progress", started: (/* @__PURE__ */ new Date()).toLocaleDateString(), mins: i[7] }]);
+  };
+  const setSt = (p, st) => {
+    S.setProjects((v) => v.map((x) => x.id === p.id ? { ...x, status: st } : x));
+    if (st === "Completed") setCel(p);
+  };
+  const looks = [...Array(nl)].map((_, n) => {
+    const s = STYL[(STYL.indexOf(sty) + n) % 6];
+    return { s, b: BOT[occ][n % 2], sh: SHO[s], ac: ACC[s], ly: LAY[s], c1: PALS[pal][n % 2], c2: PALS[pal][(n + 1) % 2] };
+  });
+  const Btn = ({ on, fn, children }) => /* @__PURE__ */ React.createElement("button", { className: "node" + (on ? " on" : ""), onClick: fn }, children);
+  const modal = open && (() => {
+    const i = IDEAS.find((x) => x[0] === open), p = proj(i);
+    return ReactDOM.createPortal(/* @__PURE__ */ React.createElement("div", { className: "card", role: "dialog", "aria-label": i[3], style: { position: "fixed", inset: 0, zIndex: 30, overflow: "auto", borderRadius: 0, paddingTop: "calc(20px + env(safe-area-inset-top,0px))", paddingBottom: "calc(20px + env(safe-area-inset-bottom,0px))" } }, /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => setOpen(null) }, "\u2715 Close"), /* @__PURE__ */ React.createElement("h2", { style: { fontSize: "1.6rem", margin: "14px 0" } }, i[2], " ", d.name, " \u2192 ", i[3]), /* @__PURE__ */ React.createElement("div", { className: "grid g2", style: { alignItems: "center" } }, /* @__PURE__ */ React.createElement("div", { style: { position: "relative", height: 190 } }, /* @__PURE__ */ React.createElement(Lbl, { t: "YOUR GARMENT" }), /* @__PURE__ */ React.createElement("img", { src: r.img, alt: "Your garment", style: { width: "100%", height: "100%", objectFit: "contain", background: "var(--l)", borderRadius: 16 } })), /* @__PURE__ */ React.createElement("div", { style: { position: "relative", height: 190, borderRadius: 16, overflow: "hidden" } }, /* @__PURE__ */ React.createElement(Lbl, { t: "CONCEPT", c: true }), /* @__PURE__ */ React.createElement(Art, { k: i[1], c: hex }))), /* @__PURE__ */ React.createElement("p", { style: { textAlign: "center" }, className: "sans" }, "\u2702\uFE0F Cut \u2192 \u{1F9F5} Stitch \u2192 \u{1F3A8} Redesign"), /* @__PURE__ */ React.createElement("div", { style: { position: "relative", height: 220, borderRadius: 16, overflow: "hidden", background: "var(--l)" } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", inset: 0 } }, /* @__PURE__ */ React.createElement(Art, { k: i[1], c: hex })), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", inset: 0, clipPath: "inset(0 " + (100 - pos) + "% 0 0)", background: "var(--l)" } }, /* @__PURE__ */ React.createElement("img", { src: r.img, alt: "", style: { width: "100%", height: "100%", objectFit: "contain" } })), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 0, bottom: 0, left: pos + "%", width: 3, background: "#fff" } }), /* @__PURE__ */ React.createElement(Lbl, { t: "BEFORE \u{1F455}" }), /* @__PURE__ */ React.createElement("span", { className: "chip", style: { position: "absolute", top: 8, right: 8, background: "var(--acc)", color: "#fff" } }, "AFTER ", i[2])), /* @__PURE__ */ React.createElement("input", { type: "range", min: "0", max: "100", value: pos, "aria-label": "Before and after slider", onChange: (e) => setPos(+e.target.value), style: { width: "100%" } }), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Concept Preview \u2014 illustrates one possible redesign; not exactly what your garment will look like."), warn && i[10] ? /* @__PURE__ */ React.createElement("div", { className: "warn" }, "\u26A0\uFE0F Material consideration: ", mat, " may not be ideal for this project \u2014 ", /Silk|Chiffon|Satin|Velvet/.test(mat) ? "avoid high-friction DIY projects." : "prefer repair, reuse or soft accessories.") : null, stretch && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "Stretch fabric: choose projects that account for elasticity and avoid tight seams."), /* @__PURE__ */ React.createElement("p", { className: "sans" }, /* @__PURE__ */ React.createElement("b", null, "Difficulty:"), " ", DIFF[i[6]], " \xB7 ", /* @__PURE__ */ React.createElement("b", null, "Time:"), " ~", i[7], " min \xB7 ", /* @__PURE__ */ React.createElement("b", null, "You'll need:"), " ", i[11]), /* @__PURE__ */ React.createElement("h3", null, "Steps"), /* @__PURE__ */ React.createElement("ol", { className: "sans", style: { lineHeight: 1.9 } }, i[12].split("|").map((x, k) => /* @__PURE__ */ React.createElement("li", { key: k }, /* @__PURE__ */ React.createElement("b", null, "0", k + 1), " \u2014 ", x))), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Illustrations are for guidance \u2014 follow the steps below."), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("button", { className: "btn o full", onClick: () => toggle(i) }, isSaved(i) ? "\u2713 Saved to My Ideas" : "\u2661 Save Idea"), !p ? /* @__PURE__ */ React.createElement("button", { className: "btn full", onClick: () => start(i) }, "Start This Project \u2192") : /* @__PURE__ */ React.createElement(React.Fragment, null, ["Not Started", "In Progress", "Completed"].map((st) => /* @__PURE__ */ React.createElement("button", { key: st, className: "node" + (p.status === st ? " on" : ""), onClick: () => setSt(p, st) }, st))))), document.body);
+  })();
+  return /* @__PURE__ */ React.createElement("div", null, modal, /* @__PURE__ */ React.createElement("h2", { style: { fontSize: "1.6rem", margin: "0 0 6px" } }, "\u2728 Reuse Studio"), /* @__PURE__ */ React.createElement("p", null, "Give your garment a new purpose. Based on your garment's material, condition, type and appearance, here are ideas for giving it another life."), /* @__PURE__ */ React.createElement("div", { className: "grid g2", style: { alignItems: "center", margin: "12px 0" } }, /* @__PURE__ */ React.createElement("div", { style: { position: "relative", height: 200 } }, /* @__PURE__ */ React.createElement(Lbl, { t: "YOUR GARMENT" }), /* @__PURE__ */ React.createElement("img", { src: r.img, alt: "Your garment", style: { width: "100%", height: "100%", objectFit: "contain", background: "var(--l)", borderRadius: 16 } })), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h3", null, "Detected: ", d.name), /* @__PURE__ */ React.createElement("p", { className: "sans" }, "Material: ", mat, " \xB7 Condition: ", cond, dm ? " \xB7 Damage: " + dm.t : ""), /* @__PURE__ */ React.createElement("p", null, ["Wear Again", "Redesign", "Upcycle", "DIY", "Donate", "Repurpose"].map((x) => /* @__PURE__ */ React.createElement("span", { className: "chip", key: x }, x))))), dm && /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginBottom: 12 } }, /* @__PURE__ */ React.createElement("h3", null, "\u{1F9F5} Repair \u2192 then Reuse"), /* @__PURE__ */ React.createElement("p", null, "Repair the ", dm.t.toLowerCase(), " (", dm.loc, ") first, then either keep wearing it or upcycle it below.")), warn && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "\u26A0\uFE0F Material consideration: ", mat, " is delicate \u2014 prefer gentle, low-friction projects."), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 8 } }, TABS.map((t) => /* @__PURE__ */ React.createElement(Btn, { key: t[0], on: tab === t[0], fn: () => {
+    setTab(t[0]);
+    setLim(6);
+  } }, t[1]))), tab === "wear" ? /* @__PURE__ */ React.createElement("div", { style: { marginTop: 14 } }, /* @__PURE__ */ React.createElement("h3", null, "Style Your Garment"), /* @__PURE__ */ React.createElement("p", { className: "sans" }, "Occasion"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, OCCS.map((x) => /* @__PURE__ */ React.createElement(Btn, { key: x, on: occ === x, fn: () => setOcc(x) }, x))), /* @__PURE__ */ React.createElement("p", { className: "sans" }, "Style"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, STYL.map((x) => /* @__PURE__ */ React.createElement(Btn, { key: x, on: sty === x, fn: () => setSty(x) }, x))), /* @__PURE__ */ React.createElement("p", { className: "sans" }, "Color palette"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, Object.keys(PALS).map((x) => /* @__PURE__ */ React.createElement(Btn, { key: x, on: pal === x, fn: () => setPal(x) }, x))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 14, overflowX: "auto", padding: "14px 0" } }, looks.map((l, n) => /* @__PURE__ */ React.createElement("div", { key: n, className: "card", style: { minWidth: 250, flex: "0 0 250px", borderColor: tried === n ? "var(--g)" : "" } }, /* @__PURE__ */ React.createElement("div", { style: { position: "relative", height: 170, borderRadius: 14, overflow: "hidden" } }, /* @__PURE__ */ React.createElement(Lbl, { t: "CONCEPT", c: true }), /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 300 300", style: { width: "100%", height: "100%", background: "var(--l)" }, role: "img", "aria-label": "Outfit concept" }, /* @__PURE__ */ React.createElement("path", { d: "M95 30l-55 38 25 38 25-16v60h110v-60l25 16 25-38-55-38q-20 20-70 0z", fill: hex }), /* @__PURE__ */ React.createElement("rect", { x: "105", y: "160", width: "90", height: "95", rx: "10", fill: l.c1 }), /* @__PURE__ */ React.createElement("ellipse", { cx: "128", cy: "272", rx: "20", ry: "8", fill: l.c2 }), /* @__PURE__ */ React.createElement("ellipse", { cx: "172", cy: "272", rx: "20", ry: "8", fill: l.c2 }))), /* @__PURE__ */ React.createElement("h3", { style: { marginTop: 8 } }, "Look ", String(n + 1).padStart(2, "0"), " \u2014 ", l.s), /* @__PURE__ */ React.createElement("p", { className: "sans", style: { margin: "4px 0" } }, d.name, " + ", l.b, " + ", l.sh, l.ly ? " + " + l.ly : "", " + ", l.ac), /* @__PURE__ */ React.createElement("span", { className: "chip" }, pal), /* @__PURE__ */ React.createElement("button", { className: "btn o full", style: { marginTop: 8 }, onClick: () => setTried(n) }, tried === n ? "\u2713 Trying this look" : "Try This Look")))), /* @__PURE__ */ React.createElement("button", { className: "btn full", onClick: () => setNl(nl + 1) }, "\u2728 Generate Another Look"), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Styling concepts shown as illustrative flat-lays.")) : /* @__PURE__ */ React.createElement("div", { style: { marginTop: 14 } }, /* @__PURE__ */ React.createElement("h3", null, "What kind of reuse are you looking for?"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 6 } }, PREFS.map((p) => /* @__PURE__ */ React.createElement(Btn, { key: p[0], on: pref === p[0], fn: () => setPref(pref === p[0] ? "" : p[0]) }, p[1]))), pref ? /* @__PURE__ */ React.createElement(Inspire, { key: pref + "|" + mat + "|" + d.type, r, S, pref, d, mat, cond, dm, hex }) : null, /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("select", { "aria-label": "Difficulty", value: dif, onChange: (e) => setDif(+e.target.value) }, /* @__PURE__ */ React.createElement("option", { value: "0" }, "Any difficulty"), /* @__PURE__ */ React.createElement("option", { value: "1" }, "Easy"), /* @__PURE__ */ React.createElement("option", { value: "2" }, "Medium"), /* @__PURE__ */ React.createElement("option", { value: "3" }, "Advanced")), /* @__PURE__ */ React.createElement("select", { "aria-label": "Time available", value: tm, onChange: (e) => setTm(+e.target.value) }, /* @__PURE__ */ React.createElement("option", { value: "0" }, "Any time"), /* @__PURE__ */ React.createElement("option", { value: "15" }, "Under 15 min"), /* @__PURE__ */ React.createElement("option", { value: "30" }, "Up to 30 min"), /* @__PURE__ */ React.createElement("option", { value: "60" }, "Up to 60 min"), /* @__PURE__ */ React.createElement("option", { value: "999" }, "1+ hour"))), /* @__PURE__ */ React.createElement("h3", { style: { margin: "18px 0 4px" } }, "\u2728 Ideas Made For Your Garment"), /* @__PURE__ */ React.createElement("p", { className: "note" }, "RE-THREAD suitability scores \u2014 application-generated, not scientific probabilities."), !list.length ? /* @__PURE__ */ React.createElement("p", null, pref === "wear" ? "Keep-wearing ideas are shown above \u2014 for outfit looks, open the Wear Again tab." : "No ideas match these filters yet \u2014 try loosening them.") : /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, list.slice(0, lim).map((i, n) => /* @__PURE__ */ React.createElement("div", { key: i[0], className: "card h", style: { padding: 0, overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { position: "relative", height: 170 } }, /* @__PURE__ */ React.createElement(Lbl, { t: "CONCEPT PREVIEW", c: true }), /* @__PURE__ */ React.createElement(Art, { k: i[1], c: hex })), /* @__PURE__ */ React.createElement("div", { style: { padding: 16 } }, /* @__PURE__ */ React.createElement("h3", null, i[2], " ", ttl(i)), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0" } }, i[5]), /* @__PURE__ */ React.createElement("span", { className: "chip" }, DIFF[i[6]]), /* @__PURE__ */ React.createElement("span", { className: "chip" }, "~", i[7], " min"), /* @__PURE__ */ React.createElement("span", { className: "chip" }, n === 0 ? "\u{1F947} " : n === 1 ? "\u{1F948} " : n === 2 ? "\u{1F949} " : "", sc(i), "% match"), warn && i[10] ? /* @__PURE__ */ React.createElement("span", { className: "chip", style: { background: "#fff3e0", color: "#7a4a10" } }, "\u26A0\uFE0F Material consideration") : null, /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn o", style: { minHeight: 0, padding: "8px 14px" }, onClick: () => toggle(i) }, isSaved(i) ? "\u2713 Saved" : "\u2661 Save Idea"), /* @__PURE__ */ React.createElement("button", { className: "btn", style: { minHeight: 0, padding: "8px 14px" }, onClick: () => {
+    setPos(50);
+    setOpen(i[0]);
+  } }, "View Idea")))))), /* @__PURE__ */ React.createElement("h3", { style: { margin: "18px 0 8px" } }, "Want More Ideas?"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, /* @__PURE__ */ React.createElement("button", { className: "node", onClick: () => setLim(lim + 3) }, "Generate More"), /* @__PURE__ */ React.createElement("button", { className: "node", onClick: () => {
+    setDif(1);
+    setPref("");
+  } }, "More Beginner Ideas"), /* @__PURE__ */ React.createElement("button", { className: "node", onClick: () => {
+    setTab("redesign");
+    setPref("");
+  } }, "More Fashion Ideas"), /* @__PURE__ */ React.createElement("button", { className: "node", onClick: () => {
+    setTab("home");
+    setPref("");
+  } }, "More Home Ideas"), /* @__PURE__ */ React.createElement("button", { className: "node", onClick: () => {
+    setTab("diy");
+    setPref("creative");
+  } }, "More Creative Ideas"), /* @__PURE__ */ React.createElement("button", { className: "node", onClick: () => {
+    setPref("nosew");
+  } }, "More No-Sew Ideas"))), cel && /* @__PURE__ */ React.createElement("div", { className: "card fu", style: { marginTop: 16, textAlign: "center", background: "var(--l)" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: "2.4rem" } }, "\u{1F389}"), /* @__PURE__ */ React.createElement("h2", { style: { fontSize: "1.5rem" } }, "You gave this garment a new life!"), /* @__PURE__ */ React.createElement("p", { className: "sans" }, "Original: ", cel.g, " \u2192 New purpose: ", cel.title), /* @__PURE__ */ React.createElement("div", { className: "big" }, "+25 Circular Points"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { justifyContent: "center" } }, /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: () => {
+    S.setW((w) => [{ id: "g" + Date.now(), name: cel.title + " (from " + cel.g + ")", type: cel.type, material: cel.material, cond: cel.cond, action: "Reuse", img: mk(cel.hex), ev: ["Purchased", "First Use", "Reuse"] }, ...w]);
+    setCel(null);
+    alert("Added to your wardrobe journey.");
+  } }, "Add to Garment Journey"), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => setCel(null) }, "Close"))), /* @__PURE__ */ React.createElement("h3", { style: { margin: "24px 0 8px" } }, "My Circular Projects"), !S.projects.length ? /* @__PURE__ */ React.createElement("p", { className: "note" }, "No projects yet \u2014 open an idea and choose Start This Project.") : S.projects.map((p) => /* @__PURE__ */ React.createElement("div", { key: p.id, className: "card", style: { marginBottom: 8 } }, /* @__PURE__ */ React.createElement("b", null, p.title), " ", /* @__PURE__ */ React.createElement("span", { className: "note" }, "from ", p.g, " \xB7 started ", p.started, " \xB7 ~", p.mins, " min"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 6 } }, ["Not Started", "In Progress", "Completed"].map((st) => /* @__PURE__ */ React.createElement("button", { key: st, className: "node" + (p.status === st ? " on" : ""), onClick: () => setSt(p, st) }, st === "Completed" ? "Mark as Completed \u2713" : st))), React.createElement(Checklist, { p, S }))), /* @__PURE__ */ React.createElement("h3", { style: { margin: "24px 0 8px" } }, "My Saved Ideas"), !S.saved.length ? /* @__PURE__ */ React.createElement("p", { className: "note" }, "Tap \u2661 Save Idea on any card.") : /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, S.saved.map((x) => {
+    const i = IDEAS.find((y) => y[0] === x.iid);
+    return /* @__PURE__ */ React.createElement("div", { key: x.iid + x.g, className: "card", style: { padding: 0, overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { height: 110 } }, /* @__PURE__ */ React.createElement(Art, { k: i[1], c: x.hex })), /* @__PURE__ */ React.createElement("div", { style: { padding: 12 } }, /* @__PURE__ */ React.createElement("b", null, i[3]), /* @__PURE__ */ React.createElement("p", { className: "note", style: { margin: "2px 0" } }, "from ", x.g), /* @__PURE__ */ React.createElement("button", { className: "btn o", style: { minHeight: 0, padding: "6px 12px" }, onClick: () => S.setSaved((v) => v.filter((y) => !(y.iid === x.iid && y.g === x.g))) }, "Remove")));
+  })), /* @__PURE__ */ React.createElement("p", { className: "sans", style: { textAlign: "center", marginTop: 24, color: "var(--g)" } }, /* @__PURE__ */ React.createElement("b", null, "Give Every Garment Its Next Best Life.")));
+}
+function Ring({ v, max = 100, size = 140, label, sub }) {
+  const r = size / 2 - 9, c = 2 * Math.PI * r;
+  return /* @__PURE__ */ React.createElement("div", { style: { position: "relative", width: size, height: size, margin: "0 auto" } }, /* @__PURE__ */ React.createElement("svg", { width: size, height: size, style: { transform: "rotate(-90deg)" }, "aria-hidden": "true" }, /* @__PURE__ */ React.createElement("circle", { cx: size / 2, cy: size / 2, r, fill: "none", stroke: "var(--l)", strokeWidth: "11" }), /* @__PURE__ */ React.createElement("circle", { cx: size / 2, cy: size / 2, r, fill: "none", stroke: "var(--g)", strokeWidth: "11", strokeLinecap: "round", strokeDasharray: c, strokeDashoffset: c * (1 - Math.min(v / max, 1)), style: { transition: "stroke-dashoffset 1.2s" } })), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", inset: 0, display: "grid", placeItems: "center", textAlign: "center" } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "big", style: { fontSize: size / 5 } }, label), /* @__PURE__ */ React.createElement("div", { className: "note", style: { fontStyle: "normal" } }, sub))));
+}
+const Bar = ({ l, v, note }) => /* @__PURE__ */ React.createElement("div", { style: { margin: "10px 0" }, className: "sans" }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", fontSize: ".9rem" } }, /* @__PURE__ */ React.createElement("span", null, l), /* @__PURE__ */ React.createElement("b", null, v, "%")), /* @__PURE__ */ React.createElement("div", { className: "bar", role: "progressbar", "aria-valuenow": v, "aria-label": l }, /* @__PURE__ */ React.createElement("i", { style: { width: v + "%" } })));
+const AI = () => /* @__PURE__ */ React.createElement("span", { className: "ai" }, "AI Estimate");
+const Timeline = ({ steps }) => /* @__PURE__ */ React.createElement("div", { className: "tl" }, steps.map((s, i) => /* @__PURE__ */ React.createElement(React.Fragment, { key: i }, /* @__PURE__ */ React.createElement("b", null, s), i < steps.length - 1 && /* @__PURE__ */ React.createElement("span", null, "\u2192"))));
+function Nav({ route }) {
+  const [o, setO] = useState(false), [th, setTh] = useState(store.get("rethread2:theme", "auto"));
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", th === "auto" ? "" : th);
+    store.set("rethread2:theme", th);
+  }, [th]);
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("nav", { "aria-label": "Main" }, /* @__PURE__ */ React.createElement("div", { className: "w nb" }, /* @__PURE__ */ React.createElement("span", { className: "logo", tabIndex: "0", onClick: () => go("home") }, "RE-THREAD"), /* @__PURE__ */ React.createElement("div", { className: "links" + (o ? " open" : "") }, PG.map(([k, l]) => /* @__PURE__ */ React.createElement("a", { key: k, tabIndex: "0", className: route === k ? "on" : "", onClick: () => {
+    setO(false);
+    go(k);
+  } }, l))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "burger", style: { display: "block" }, "aria-label": "Toggle theme", onClick: () => setTh((t) => t === "auto" ? "dark" : t === "dark" ? "light" : "auto") }, th === "dark" ? "\u{1F319}" : th === "light" ? "\u2600\uFE0F" : "\u{1F317}"), /* @__PURE__ */ React.createElement("button", { className: "burger", "aria-label": "Menu", "aria-expanded": o, onClick: () => setO(!o) }, o ? "\u2715" : "\u2630")))), /* @__PURE__ */ React.createElement("div", { className: "bn" }, BN.map(([k, i, l]) => /* @__PURE__ */ React.createElement("a", { key: k, className: route === k ? "on" : "", onClick: () => go(k) }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: "1.2rem" } }, i), l))));
+}
+function Camera({ onShot, onClose, onBrowse }) {
+  const v = useRef(), [err, setErr] = useState(""), [shot, setShot] = useState(null), [torch, setT] = useState(false), st = useRef();
+  useEffect(() => {
+    (async () => {
+      try {
+        if (!navigator.mediaDevices) throw 0;
+        st.current = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+        v.current.srcObject = st.current;
+      } catch (e) {
+        setErr("Camera access isn't available. You can upload a photo instead.");
+      }
+    })();
+    return () => st.current && st.current.getTracks().forEach((t) => t.stop());
+  }, []);
+  const cap = () => {
+    const c = document.createElement("canvas");
+    c.width = v.current.videoWidth;
+    c.height = v.current.videoHeight;
+    c.getContext("2d").drawImage(v.current, 0, 0);
+    setShot(c.toDataURL("image/jpeg", 0.9));
+  };
+  const fl = async () => {
+    try {
+      await st.current.getVideoTracks()[0].applyConstraints({ advanced: [{ torch: !torch }] });
+      setT(!torch);
+    } catch (e) {
+      setErr("Flash isn't supported on this device.");
+    }
+  };
+  return /* @__PURE__ */ React.createElement("div", { className: "card", style: { position: "fixed", inset: 0, zIndex: 30, overflow: "auto", borderRadius: 0, paddingTop: "calc(20px + env(safe-area-inset-top,0px))", paddingBottom: "calc(20px + env(safe-area-inset-bottom,0px))" }, role: "dialog", "aria-label": "Camera" }, /* @__PURE__ */ React.createElement("h3", null, "Position the garment inside the frame."), err && /* @__PURE__ */ React.createElement("div", { className: "warn" }, err), shot ? /* @__PURE__ */ React.createElement("img", { className: "vid", src: shot, alt: "Captured" }) : /* @__PURE__ */ React.createElement("video", { ref: v, className: "vid", autoPlay: true, playsInline: true, muted: true }), /* @__PURE__ */ React.createElement("div", { className: "row" }, shot ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: () => onShot(shot) }, "Use Photo"), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => setShot(null) }, "Retake")) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: !!err && !st.current, onClick: cap }, "Capture"), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: fl }, "Flash ", torch ? "on" : "off")), err && /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: onBrowse }, "Choose from Photos"), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: onClose }, "Cancel")));
+}
+function Slot({ title, icon, hint, val, set, setErr, big }) {
+  const f = useRef(), cf = useRef(), [cam, setCam] = useState(false), [dr, setDr] = useState(false);
+  const coarse = window.matchMedia && matchMedia("(pointer:coarse)").matches;
+  const take = () => coarse ? cf.current.click() : setCam(true);
+  const pick = (file) => {
+    if (!file) return;
+    if (!/^image\/(jpe?g|png|webp)$/.test(file.type)) return setErr("That file type isn't supported. Please use JPG, JPEG, PNG or WEBP.");
+    if (file.size > 8388608) return setErr("That image is over 8 MB. Please choose a smaller one.");
+    setErr("");
+    const r = new FileReader();
+    r.onload = () => set({ src: r.result, name: file.name, size: file.size });
+    r.readAsDataURL(file);
+  };
+  const Big = ({ i, t, s, fn }) => /* @__PURE__ */ React.createElement("button", { className: "card h", onClick: fn, style: { textAlign: "center", cursor: "pointer", width: "100%", color: "var(--ink)", font: "inherit" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: "2.6rem" } }, i), /* @__PURE__ */ React.createElement("h3", null, t), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0 0" } }, s));
+  const desk = window.matchMedia && matchMedia("(hover:hover)").matches;
+  return /* @__PURE__ */ React.createElement("div", { className: big ? "" : "card", onDragOver: (e) => e.preventDefault(), onDrop: (e) => {
+    e.preventDefault();
+    setDr(false);
+    pick(e.dataTransfer.files[0]);
+  } }, big ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h3", { style: { marginBottom: 12 } }, "How would you like to add your garment? Choose the easiest option for you."), /* @__PURE__ */ React.createElement(Big, { i: "\u{1F4C1}", t: "Choose from Photos", s: "Select an existing image from your gallery", fn: () => f.current.click() }), /* @__PURE__ */ React.createElement("p", { style: { textAlign: "center", margin: "10px 0" }, className: "sans" }, "OR"), /* @__PURE__ */ React.createElement(Big, { i: "\u{1F4F7}", t: "Take Photo", s: "Use your camera to scan the garment now", fn: take }), desk && /* @__PURE__ */ React.createElement("div", { className: "drop" + (dr ? " on" : ""), style: { marginTop: 16 }, onDragEnter: () => setDr(true), onDragLeave: () => setDr(false) }, /* @__PURE__ */ React.createElement("p", { style: { margin: 0 } }, "Drag your garment photo here"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { justifyContent: "center", marginTop: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => f.current.click() }, "Choose from Photos")))) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h3", null, icon, " ", title), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0 10px", fontSize: ".9rem" } }, hint), val ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("img", { className: "th", src: val.src, alt: title + " preview" }), /* @__PURE__ */ React.createElement("p", { className: "note" }, val.name, " \xB7 ", fmt(val.size), /Label/.test(title) ? " \xB7 Label is read during analysis" : ""), /* @__PURE__ */ React.createElement("button", { className: "btn o full", onClick: () => set(null) }, "Remove")) : /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 6 } }, /* @__PURE__ */ React.createElement("button", { className: "btn o full", onClick: () => f.current.click() }, "\u{1F4C1} Choose from Photos"), /* @__PURE__ */ React.createElement("button", { className: "btn o full", onClick: take }, "\u{1F4F7} Take Photo"))), /* @__PURE__ */ React.createElement("input", { ref: f, type: "file", hidden: true, "aria-label": "Choose " + title + " from photos", accept: ".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp", onChange: (e) => {
+    pick(e.target.files[0]);
+    e.target.value = "";
+  } }), /* @__PURE__ */ React.createElement("input", { ref: cf, type: "file", hidden: true, accept: "image/*", capture: "environment", "aria-label": "Take photo for " + title, onChange: (e) => {
+    pick(e.target.files[0]);
+    e.target.value = "";
+  } }), cam && /* @__PURE__ */ React.createElement(Camera, { onClose: () => setCam(false), onBrowse: () => {
+    setCam(false);
+    setTimeout(() => f.current.click(), 50);
+  }, onShot: (s) => {
+    setCam(false);
+    set({ src: s, name: "camera-photo.jpg", size: Math.round(s.length * 0.75) });
+  } }));
+}
+function Home() {
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "w hero" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("span", { className: "tag" }, "AI-ASSISTED GARMENT INTELLIGENCE"), /* @__PURE__ */ React.createElement("h1", null, "RE-THREAD"), /* @__PURE__ */ React.createElement("h2", { style: { color: "var(--g)", margin: "10px 0" } }, "Give Every Garment Its Next Best Life."), /* @__PURE__ */ React.createElement("p", { style: { fontSize: "1.1rem" } }, "Scan any garment to understand what it is made of, assess its condition, discover its next best use, and make a more circular fashion decision."), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("button", { className: "btn full", onClick: () => go("scan") }, "Scan My Garment"), /* @__PURE__ */ React.createElement("button", { className: "btn o full", onClick: () => document.getElementById("hw").scrollIntoView({ behavior: "smooth" }) }, "See How It Works"))), /* @__PURE__ */ React.createElement("div", { className: "card", style: { textAlign: "center" } }, ["\u{1F455} Garment", "\u{1F50D} AI Scan", "\u{1F9F5} Fabric Intelligence", "\u267B\uFE0F Circular Recommendation", "\u{1F331} New Life"].map((s, i) => /* @__PURE__ */ React.createElement("div", { key: i }, /* @__PURE__ */ React.createElement("div", { className: "chip", style: { fontSize: ".95rem", padding: "8px 18px" } }, s), i < 4 && /* @__PURE__ */ React.createElement("div", { style: { color: "var(--s)" } }, "\u2193"))))), /* @__PURE__ */ React.createElement("div", { className: "w sec" }, /* @__PURE__ */ React.createElement("h2", null, "Clothes shouldn't become waste just because their first life is over."), /* @__PURE__ */ React.createElement("p", null, "RE-THREAD uses AI-assisted garment intelligence to help people understand what they own and decide what its next best life could be.")), /* @__PURE__ */ React.createElement("div", { className: "w sec", id: "hw", style: { paddingTop: 0 } }, /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, [["\u{1F50D}", "Fabric Intelligence", "Likely material, texture and weave \u2014 with candidates and confidence."], ["\u{1F3F7}\uFE0F", "Smart Label Scanner", "Fibre composition, care and brand from labels (read from your label photo)."], ["\u{1F9E0}", "AI Condition Analysis", "Visible wear: stains, holes, tears, pilling, fading, seams."], ["\u267B\uFE0F", "Circular Decision Engine", "Reuse, repair, donate, recycle or take-back \u2014 explained."], ["\u{1F30D}", "Impact Estimator", "Illustrative estimates, with the methodology shown."], ["\u{1F4CA}", "Garment Lifecycle", "A passport and timeline for every garment."]].map((f) => /* @__PURE__ */ React.createElement("div", { key: f[1], className: "card h" }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: "1.8rem" } }, f[0]), /* @__PURE__ */ React.createElement("h3", null, f[1]), /* @__PURE__ */ React.createElement("p", null, f[2])))), /* @__PURE__ */ React.createElement("div", { className: "row", style: { justifyContent: "center", marginTop: 30 } }, /* @__PURE__ */ React.createElement("button", { className: "btn full", onClick: () => go("scan") }, "Scan My Garment"))));
+}
+function Scan({ S }) {
+  const { ev, setEv, setReport, setDemo } = S;
+  const [err, setErr] = useState(""), [q, setQ] = useState(null);
+  const up = (k) => (v) => setEv((e) => ({ ...e, [k]: v }));
+  useEffect(() => {
+    setQ(null);
+    if (ev.full) brightness(ev.full.src).then((b) => setQ(b));
+  }, [ev.full]);
+  const run = (d) => {
+    setReport(null);
+    setDemo(d || null);
+    go("analysis");
+  };
+  return /* @__PURE__ */ React.createElement("div", { className: "w sec" }, /* @__PURE__ */ React.createElement("h2", null, "Scan Your Garment"), /* @__PURE__ */ React.createElement("p", { className: "note" }, "For garment identification, upload a photo showing the complete garment (\u2713 full shirt from the front \xB7 \u2717 fabric close-up, sleeve close-up, folded clothing, small crop). Close-up fabric photos are useful for fabric identification."), err && /* @__PURE__ */ React.createElement("div", { className: "warn", role: "alert" }, err), !navigator.onLine && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "You appear to be offline. Some features may be limited while offline."), !ev.full ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", null, "Choose how you want to add your garment."), /* @__PURE__ */ React.createElement(Slot, { big: true, val: null, set: up("full"), setErr })) : /* @__PURE__ */ React.createElement("div", { className: "card fu" }, /* @__PURE__ */ React.createElement("h3", null, "Photo Preview"), /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center" } }, /* @__PURE__ */ React.createElement("img", { className: "prev", src: ev.full.src, alt: "Garment preview" })), /* @__PURE__ */ React.createElement("p", { className: "sans" }, /* @__PURE__ */ React.createElement("b", null, ev.full.name), " \xB7 ", fmt(ev.full.size), /* @__PURE__ */ React.createElement("br", null), "Image quality: ", q == null ? "Checking\u2026" : q < 70 ? "\u26A0\uFE0F Dark \u2014 try taking the photo near a window" : q > 225 ? "\u26A0\uFE0F Overexposed" : "Good \u2713", " ", /* @__PURE__ */ React.createElement("span", { className: "note" }, "(lighting checked)")), !ev.fabric && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "Take or add a closer photo of the fabric surface below for better fabric identification."), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("button", { className: "btn o full", onClick: () => up("full")(null) }, "Replace Photo"), /* @__PURE__ */ React.createElement("button", { className: "btn full", onClick: () => run() }, "Continue Analysis \u2192"))), ev.full && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h3", { style: { margin: "24px 0 12px" } }, "Add More Photos ", /* @__PURE__ */ React.createElement("span", { className: "note" }, "(optional \u2014 mix gallery and camera)")), /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, /* @__PURE__ */ React.createElement(Slot, { title: "Fabric Close-up", icon: "\u{1F52C}", hint: "Already have a close-up photo? For better fabric analysis, use a clear, well-lit close-up of the textile surface.", val: ev.fabric, set: up("fabric"), setErr }), /* @__PURE__ */ React.createElement(Slot, { title: "Clothing Label", icon: "\u{1F3F7}\uFE0F", hint: "Upload a photo of the garment's composition/care label.", val: ev.label, set: up("label"), setErr }), /* @__PURE__ */ React.createElement(Slot, { title: "Damage Area", icon: "\u{1FA79}", hint: "Optional: a close-up of any tear, stain or wear.", val: ev.damage, set: up("damage"), setErr }))), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16, background: "var(--l)" } }, /* @__PURE__ */ React.createElement("h3", null, "Demo Mode \u2014 60-second tour"), /* @__PURE__ */ React.createElement("p", null, "Pick a sample garment to load a complete analysis with no photo."), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 6 } }, DEMOS.map((d) => /* @__PURE__ */ React.createElement("button", { key: d.id, className: "btn " + (d.id === "d1" ? "" : "o"), onClick: () => run(d) }, d.name)))), /* @__PURE__ */ React.createElement("p", { className: "note", style: { marginTop: 14 } }, "Your images stay in this browser and are used only for this prototype's simulated analysis."));
+}
+const QS = [["feel", "Does the fabric feel\u2026", ["crisp", "soft", "smooth", "rough", "fuzzy", "slippery"]], ["stretch", "Does it stretch?", ["yes", "slightly", "no"]], ["shine", "Does it have shine?", ["yes", "slight", "no"]], ["surface", "Is the surface\u2026", ["smooth", "textured", "slubby", "fuzzy", "ribbed"]]], LC = { HIGH: "#4c8a5e", MEDIUM: "#c98a2b", LOW: "#b5432f" };
+function FabricPanel({ report: R, setReport, ev }) {
+  const f = R.fabric, lb = R.label, [qo, setQo] = useState(false), [rows, setRows] = useState([{ f: "Cotton", p: "" }, { f: "", p: "" }]), [err, setErr] = useState(""), [fbk, setFbk] = useState(null), [act, setAct] = useState("");
+  const comp = R.composition || (lb ? { rows: lb.comp, src: "Label composition (sample data)" } : null), ans = R.answers || {}, top = f.top, known = top && top !== "Unknown", tr = TR[top], lv = f.level;
+  const big = comp && [...comp.rows].sort((a, b) => b[1] - a[1])[0][0], vis = f.visTop || (f.status === "visual" && !f.confirmed ? f.top : null), conflict = comp && vis && vis !== big;
+  const amb = f.candidates.length > 1 && f.candidates[0][1] - f.candidates[1][1] < 12 && !f.confirmed;
+  const ind = top === "Linen" ? ["Natural slub texture", "Matte surface", "Irregular yarn appearance", "Characteristic woven structure"] : tr ? ["Feel: " + tr[0].replace(/ /g, ", "), "Stretch: " + tr[1].replace(/ /g, " / "), "Shine: " + tr[2].replace(/ /g, " / "), "Surface: " + tr[3].replace(/ /g, ", ")] : [];
+  const answer = (k, v) => setReport((r) => {
+    const a = { ...r.answers || {}, [k]: v };
+    return { ...r, answers: a, fabric: refab({ ...r, answers: a }, a) };
+  });
+  const confirm2 = () => {
+    const r = rows.filter((x) => x.f || x.p).map((x) => [x.f, +x.p]), sum = r.reduce((s, x) => s + x[1], 0);
+    if (!r.length || r.some((x) => !x[0] || !(x[1] > 0))) return setErr("Choose a fibre and a percentage for each row.");
+    if (new Set(r.map((x) => x[0])).size !== r.length) return setErr("Each fibre should appear once.");
+    if (sum !== 100) return setErr("Percentages must add up to 100 (currently " + sum + ").");
+    setErr("");
+    const b = [...r].sort((x, y) => y[1] - x[1])[0][0];
+    setReport((R2) => ({ ...R2, composition: { rows: r, src: ev.label ? "Label photo \u2014 entered by you" : "Entered by you" }, fabric: { ...R2.fabric, visTop: R2.fabric.visTop || (R2.fabric.status === "visual" && !R2.fabric.confirmed ? R2.fabric.top : null), top: b, level: "HIGH", source: "Label / user-confirmed", confirmed: true, status: "visual" } }));
+  };
+  const saveFb = (ok, a) => {
+    const e = store.get("rethread2:feedback", []);
+    e.push({ predicted: top, actual: a || top, correct: ok, level: lv, source: f.source, hadLabel: !!comp, models: R.fabricAI || null, at: (/* @__PURE__ */ new Date()).toISOString() });
+    store.set("rethread2:feedback", e);
+    setFbk(ok ? "yes" : "no");
+    if (!ok && a) setReport((R2) => ({ ...R2, fabric: { ...R2.fabric, visTop: R2.fabric.visTop || R2.fabric.top, top: a, level: "HIGH", source: "User-provided information", confirmed: true, status: "visual", candidates: [] } }));
+  };
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h2", { style: { fontSize: "1.7rem", margin: "28px 0 6px" } }, "Fabric Intelligence"), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Likelihoods below are visual estimates \u2014 not fibre composition."), f.poor && /* @__PURE__ */ React.createElement("div", { className: "warn", role: "alert" }, "\u26A0\uFE0F ", /* @__PURE__ */ React.createElement("b", null, "Low confidence"), " \u2014 this photo is too dark or bright. Please upload a closer photo of the fabric texture."), /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("span", { className: "chip" }, "Primary match"), known ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h2", { style: { margin: "6px 0" } }, "\u{1F33F} ", top), /* @__PURE__ */ React.createElement("p", { className: "sans", style: { margin: 0 } }, FCAT(top)), /* @__PURE__ */ React.createElement("p", { className: "sans" }, /* @__PURE__ */ React.createElement("b", null, "Confidence:"), " ", /* @__PURE__ */ React.createElement("b", { style: { color: LC[lv] } }, lv), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("b", null, "Source:"), " ", f.source), /* @__PURE__ */ React.createElement("p", null, f.confirmed ? "This comes from a label or from you, not from the image." : "The image shows characteristics commonly associated with " + top.toLowerCase() + ", but visual analysis alone cannot reliably determine exact fibre composition."), ind.length > 0 && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", { className: "sans", style: { margin: "6px 0 2px" } }, /* @__PURE__ */ React.createElement("b", null, "Typical visual characteristics:")), /* @__PURE__ */ React.createElement("p", null, ind.map((x) => /* @__PURE__ */ React.createElement("span", { className: "chip", key: x }, x)))), FCAT(top).startsWith("Construction") && /* @__PURE__ */ React.createElement("p", { className: "note" }, top, " describes a weave, finish or construction, not a fibre. It is often cotton-based or synthetic but can be any fibre or a blend.")) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h3", { style: { margin: "8px 0" } }, "Can't identify from the photo yet"), /* @__PURE__ */ React.createElement("p", null, f.reason || "Not enough evidence.", " Add a label, a close-up, or answer the questions to improve accuracy."))), /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, "Possible alternatives"), f.candidates.length ? f.candidates.map((x) => /* @__PURE__ */ React.createElement("p", { key: x[0], className: "sans", style: { margin: "6px 0" } }, x[0], " \u2014 ", /* @__PURE__ */ React.createElement("b", null, R.fabricAI ? x[1].toFixed(1) + "%" : x[1] >= 60 ? "likely" : x[1] >= 25 ? "possible" : "less likely"))) : /* @__PURE__ */ React.createElement("p", null, "No candidates yet."), amb && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "The evidence does not clearly separate ", f.candidates[0][0], " and ", f.candidates[1][0], ". Please add a close-up or label."), /* @__PURE__ */ React.createElement("p", { className: "note" }, "AI visual-confidence estimates, not fibre percentages. Dyes, finishes and blends can look alike."))), R.fabricAI && /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Model Analysis ", /* @__PURE__ */ React.createElement("span", { className: "chip" }, "ResNet-50 + NASNet")), /* @__PURE__ */ React.createElement("p", { className: "sans" }, /* @__PURE__ */ React.createElement("b", null, "Detected:"), " ", R.fabricAI.finalPrediction, " \xB7 ", /* @__PURE__ */ React.createElement("b", null, "Overall AI confidence:"), " ", (R.fabricAI.confidence * 100).toFixed(1), "% (", R.fabricAI.confidenceLevel, ")"), /* @__PURE__ */ React.createElement("p", { className: "sans" }, "ResNet-50: ", /* @__PURE__ */ React.createElement("b", null, R.fabricAI.resnet50.prediction), " ", (R.fabricAI.resnet50.confidence * 100).toFixed(0), "%", /* @__PURE__ */ React.createElement("br", null), "NASNet: ", /* @__PURE__ */ React.createElement("b", null, R.fabricAI.nasnet.prediction), " ", (R.fabricAI.nasnet.confidence * 100).toFixed(0), "%", /* @__PURE__ */ React.createElement("br", null), "Model agreement: ", /* @__PURE__ */ React.createElement("b", null, R.fabricAI.agreement), R.fabricAI.agreement === "HIGH" ? " \u2713" : ""), R.fabricAI.message && /* @__PURE__ */ React.createElement("div", { className: "warn", role: "alert" }, R.fabricAI.message), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Visual fabric/material estimate \u2014 model confidence, not fibre composition. Denim, satin, velvet and similar describe a construction, not a fibre. Verified composition only comes from a label.")), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Composition"), comp ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", { className: "sans" }, /* @__PURE__ */ React.createElement("b", { style: { color: "#4c8a5e" } }, "\u2713 ", comp.src)), comp.rows.map((x) => /* @__PURE__ */ React.createElement(Bar, { key: x[0], l: x[0], v: x[1] })), conflict && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "\u26A0\uFE0F Evidence conflict: the visual estimate suggested ", vis, ", but the label says ", big, ". The label takes priority.")) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", { className: "sans" }, "\u26A0\uFE0F Not verified from label"), /* @__PURE__ */ React.createElement("p", null, ev.label ? "We couldn't clearly read the label. Please retake the photo or enter the composition manually." : "Label composition couldn't be verified automatically. You can enter the information from the care label below."), rows.map((r, i) => /* @__PURE__ */ React.createElement("div", { key: i, className: "row", style: { marginTop: 6 } }, /* @__PURE__ */ React.createElement("select", { "aria-label": "Fibre", value: r.f, onChange: (e) => setRows((v) => v.map((x, j) => j === i ? { ...x, f: e.target.value } : x)) }, /* @__PURE__ */ React.createElement("option", { value: "" }, "Fibre\u2026"), FIBRES.map((x) => /* @__PURE__ */ React.createElement("option", { key: x }, x))), /* @__PURE__ */ React.createElement("input", { type: "text", inputMode: "numeric", "aria-label": "Percent", placeholder: "%", style: { width: 90 }, value: r.p, onChange: (e) => setRows((v) => v.map((x, j) => j === i ? { ...x, p: e.target.value.replace(/\D/g, "") } : x)) }))), err && /* @__PURE__ */ React.createElement("div", { className: "warn", role: "alert" }, err), /* @__PURE__ */ React.createElement("div", { className: "row" }, rows.length < 4 && /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => setRows((v) => [...v, { f: "", p: "" }]) }, "+ Add fibre"), /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: confirm2 }, "Confirm composition")))), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Improve Accuracy"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 6 } }, /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => go("scan") }, "\u{1F4F8} Scan Label"), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => go("scan") }, "\u{1F50D} Fabric Close-up"), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => setQo(!qo) }, "\u{1F4DD} Answer Questions")), qo && QS.map(([k, q, o]) => /* @__PURE__ */ React.createElement("div", { key: k }, /* @__PURE__ */ React.createElement("p", { className: "sans", style: { margin: "12px 0 4px" } }, q), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, o.map((x) => /* @__PURE__ */ React.createElement("button", { key: x, className: "node" + (ans[k] === x ? " on" : ""), onClick: () => answer(k, x) }, x)))))), known && /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Was this identification correct?"), fbk ? /* @__PURE__ */ React.createElement("p", null, "Thanks \u2014 saved in this browser only. It is not used to retrain any model.") : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 6 } }, /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => saveFb(true) }, "\u{1F44D} Yes"), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => setFbk("ask") }, "\u{1F44E} No"))), fbk === "ask" && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", { className: "sans" }, "What is the actual fabric?"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, ["Linen", "Cotton", "Wool", "Silk", "Polyester", "Nylon", "Rayon", "Viscose", "Acrylic", "Other"].map((x) => /* @__PURE__ */ React.createElement("button", { key: x, className: "node", onClick: () => saveFb(false, x) }, x))))));
+}
+function Analysis({ S }) {
+  const { ev, demo, report, setReport, setChosen, setUserPick } = S;
+  const [step, setStep] = useState(0), [how, setHow] = useState(false);
+  useEffect(() => {
+    if (report || !ev.full && !demo) return;
+    let ok = 1;
+    window.__rtPhase = setStep; const t = 0;
+    analyzeGarment(ev, demo).then((r) => ok && setReport(r)).catch((e) => {
+      lastErr = e.kind || "down";
+      ok && setReport("fail");
+    });
+    return () => {
+      ok = 0;
+      window.__rtPhase = null;
+    };
+  }, [report, demo]);
+  if (!ev.full && !demo) return /* @__PURE__ */ React.createElement(Empty, { msg: "Add a garment photo first." });
+  if (report === "fail") return /* @__PURE__ */ React.createElement(Empty, { msg: ({ down: "Automatic analysis is temporarily unavailable.", large: "This image is too large to analyze.", invalid: "We couldn't use this image." })[lastErr] || "Automatic analysis is temporarily unavailable.", retry: true, detail: ({ down: "Don't worry \u2014 you can continue by adding the garment details manually.", large: "Please choose a smaller image.", invalid: "Please upload a clear photo of the garment." })[lastErr] || "", onRetry: () => setReport(null), onManual: () => setReport({ ...fromApi(MANUAL, ev), manual: true }) });
+  if (!report) {
+    const L = ["Preparing your garment...", "Analyzing fabric and condition...", ev.label ? "Reading label information..." : null, "Finding possible next lives..."].filter(Boolean);
+    return /* @__PURE__ */ React.createElement("div", { className: "w sec" }, /* @__PURE__ */ React.createElement("div", { className: "card", style: { maxWidth: 540, margin: "0 auto" } }, /* @__PURE__ */ React.createElement("h2", { style: { fontSize: "1.5rem" } }, /* @__PURE__ */ React.createElement("span", { className: "spin", style: { display: "inline-block" } }, "\u{1F9F5}"), " Analyzing image..."), L.map((l, i) => /* @__PURE__ */ React.createElement("div", { key: i, className: "step" + (i < step ? " d" : "") }, /* @__PURE__ */ React.createElement("span", { className: "chk" }, i < step ? "\u2713" : ""), l))));
+  }
+  const { d, fabric: f, label: lb, cond: c, rec, used } = report, ex = LIB[f.top.replace(/ \(.*/, "")] || LIB[f.top] || LIB.Cotton, low = f.level === "LOW" && f.status !== "none", dm = c.damage;
+  const fix0 = 1;
+  const fix = (p) => {
+    const e = store.get("rethread2:corrections", []);
+    Object.entries(p).forEach(([k, v]) => e.push({ field: k, from: k === "fabric" ? f.top : d[k], to: v, at: (/* @__PURE__ */ new Date()).toISOString() }));
+    store.set("rethread2:corrections", e);
+    return fix1(p);
+  };
+  const fix1 = (p) => setReport((R) => {
+    const { fabric: fb, ...q } = p;
+    const n = { ...R.d, ...q };
+    n.name = (n.color === "Unknown" ? "" : n.color + " ") + n.type;
+    return { ...R, d: n, fabric: fb ? { ...R.fabric, candidates: [], top: fb, conf: 100, level: "HIGH", source: "User-provided information", confirmed: true, status: "visual", visTop: R.fabric.visTop || (R.fabric.status === "visual" && !R.fabric.confirmed ? R.fabric.top : null) } : R.fabric, img: ev.full ? R.img : mk(n.hex) };
+  });
+  const vq = Math.round(c.quality.reduce((a, b) => a + b) / 4);
+  const cs = 100 - Math.round(c.items.reduce((a, b) => a + b) * 100 / 24);
+  return /* @__PURE__ */ React.createElement("div", { className: "w sec fu" }, /* @__PURE__ */ React.createElement("span", { className: "tag" }, "ANALYSIS COMPLETE"), /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, /* @__PURE__ */ React.createElement("div", { className: "card", style: { textAlign: "center" } }, /* @__PURE__ */ React.createElement("img", { className: "prev", style: { maxHeight: 230 }, src: report.img, alt: d.name })), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h2", null, d.name, /* @__PURE__ */ React.createElement(AI, null)), /* @__PURE__ */ React.createElement("p", { className: "note" }, report.manual ? "User-provided information \u2014 not detected by AI." : report.simulated ? "Sample garment \u2014 example values, not an analysis of your photo." : "AI analysis complete \xB7 Source: AI Visual Analysis"), d.aiGarment && d.type !== "Unknown" && /* @__PURE__ */ React.createElement("p", { className: "sans" }, "\u2713 Full garment visible \xB7 ", d.aiGarment.reason), report.evidence && report.evidence.length > 0 && /* @__PURE__ */ React.createElement("p", null, report.evidence.map((x) => /* @__PURE__ */ React.createElement("span", { className: "chip", key: x }, x))), /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("span", { className: "chip" }, d.type), /* @__PURE__ */ React.createElement("span", { className: "chip" }, d.color), /* @__PURE__ */ React.createElement("span", { className: "chip" }, "Solid / pattern not verified"), /* @__PURE__ */ React.createElement("span", { className: "chip" }, "Gender: not determined")), /* @__PURE__ */ React.createElement("p", { className: "sans" }, /* @__PURE__ */ React.createElement("b", null, "Evidence used:"), " ", used.map((u) => (u[1] ? "\u2713 " : "\u2717 ") + u[0]).join(" \xB7 "), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("b", null, "Evidence quality:"), " ", report.quality), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => setHow(!how) }, "How We Know"), how && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "Result is a visual estimate combined with any label evidence above. Fabric confidence level: ", f.level, ". Composition is label-confirmed only when a label was read. A photo cannot reveal hidden damage, exact fibre percentages, or recyclability."))), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, d.demo ? "Adjust garment details" : "Was this identification correct? Correct it here"), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Corrections are stored separately in this browser for evaluation; they don't change the AI."), d.type === "Unknown" && /* @__PURE__ */ React.createElement("div", { className: "warn", role: "alert" }, /* @__PURE__ */ React.createElement("b", null, "GARMENT TYPE \u2014 Not detected."), " \u{1F4F7} Full garment photo required. We can't determine the garment type from this image", d.aiGarment ? " \u2014 " + d.aiGarment.reason : "", ". We won't guess.", /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: () => go("scan") }, "Upload Full Garment Photo"))), !d.demo && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", { className: "sans", style: { margin: "10px 0 4px" } }, "What does your photo show?"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, [["full", "Complete garment"], ["closeup", "Fabric close-up"], ["folded", "Folded fabric / clothing"], ["partial", "Part of a garment (sleeve, collar, pocket)"], ["unsure", "Blurry or cropped"]].map((x) => /* @__PURE__ */ React.createElement("button", { key: x[0], className: "node" + (report.framing === x[0] ? " on" : ""), onClick: () => setReport((R) => ({ ...R, framing: x[0] })) }, x[1])))), d.demo || report.framing === "full" ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", { className: "sans", style: { margin: "10px 0 4px" } }, "Confirm the garment type (entered by you)"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, TYPES.map((t) => /* @__PURE__ */ React.createElement("button", { key: t, className: "node" + (d.type === t ? " on" : ""), onClick: () => fix({ type: t }) }, t))), /* @__PURE__ */ React.createElement("p", { className: "sans", style: { margin: "10px 0 4px" } }, "Color"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, COLORS.map((c2) => /* @__PURE__ */ React.createElement("button", { key: c2[0], "aria-label": c2[0], title: c2[0], onClick: () => fix({ color: c2[0], hex: c2[1] }), style: { width: 38, height: 38, borderRadius: "50%", border: d.color === c2[0] ? "3px solid var(--g)" : "2px solid var(--line)", background: c2[1], cursor: "pointer" } })))) : !d.demo && report.framing && /* @__PURE__ */ React.createElement("p", { className: "note" }, "Garment type needs a complete, clearly visible garment, so it stays Unknown. Fabric can still be analyzed separately below."), d.demo && /* @__PURE__ */ React.createElement("p", { className: "note" }, "Sample garment \u2014 example values."), /* @__PURE__ */ React.createElement("p", { className: "sans", style: { margin: "10px 0 4px" } }, "Fabric (if you know it \u2014 a close-up is enough to help here)"), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 0 } }, Object.keys(LIB).map((t) => /* @__PURE__ */ React.createElement("button", { key: t, className: "node" + (f.top === t && f.confirmed ? " on" : ""), onClick: () => fix({ fabric: t }) }, t)))), low && /* @__PURE__ */ React.createElement("div", { className: "warn", role: "alert" }, "\u26A0\uFE0F ", /* @__PURE__ */ React.createElement("b", null, "Low Confidence"), " \u2014 We cannot confidently identify the exact fabric from this image. Try \u{1F4F7} better lighting, \u{1F52C} a fabric close-up, or \u{1F3F7}\uFE0F a label photo."), /* @__PURE__ */ React.createElement(FabricPanel, { report, setReport, ev }), lb && /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Smart Care Label"), /* @__PURE__ */ React.createElement("p", null, lb.care.map((x) => /* @__PURE__ */ React.createElement("span", { className: "chip", key: x }, x))), /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("b", null, "Easy explanation:"), " ", lb.care.map((x) => CARE[x] || x).join(". "), "."), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Demo label data.")), /* @__PURE__ */ React.createElement("h2", { style: { fontSize: "1.7rem", margin: "28px 0 12px" } }, "Garment Condition Report", /* @__PURE__ */ React.createElement(AI, null)), d.unassessed ? /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, "Condition not assessed"), /* @__PURE__ */ React.createElement("p", null, "We can't judge wear, stains or damage from this image automatically, so we won't guess. Condition fields will be available once an image-analysis model is connected.")) : /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, "Overall: ", c.overall), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Visible-image estimates \u2014 hidden damage can't be determined from a photograph."), /* @__PURE__ */ React.createElement("table", null, /* @__PURE__ */ React.createElement("tbody", null, CK.map((k, i) => /* @__PURE__ */ React.createElement("tr", { key: k }, /* @__PURE__ */ React.createElement("td", null, k), /* @__PURE__ */ React.createElement("td", { className: "sv" + c.items[i] }, /* @__PURE__ */ React.createElement("b", null, SEV[c.items[i]]))))))), /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, "Damage Detection"), dm ? /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ React.createElement("img", { className: "th", style: { height: 150 }, src: ev.damage ? ev.damage.src : report.img, alt: "Damage area" }), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", left: "55%", top: "40%", width: 56, height: 40, border: "3px solid #b5432f", borderRadius: 12 } })), /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("b", null, dm.t), " \xB7 ", dm.loc, " \xB7 Severity ", dm.sev, /* @__PURE__ */ React.createElement("br", null), "Suspected region highlighted (illustrative).")) : /* @__PURE__ */ React.createElement("p", null, "No visible damage detected."), /* @__PURE__ */ React.createElement("h3", { style: { marginTop: 12 } }, "Visual Quality: ", vq, "/100"), /* @__PURE__ */ React.createElement(Bar, { l: "Color condition", v: c.quality[0] }), /* @__PURE__ */ React.createElement(Bar, { l: "Fabric appearance", v: c.quality[1] }), /* @__PURE__ */ React.createElement(Bar, { l: "Structural condition", v: c.quality[2] }), /* @__PURE__ */ React.createElement(Bar, { l: "Cleanliness", v: c.quality[3] }))), !d.unassessed && /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Garment Intelligence Score", /* @__PURE__ */ React.createElement(AI, null)), /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, /* @__PURE__ */ React.createElement(Ring, { v: Math.round((f.conf + cs + rec.scores.Reuse) / 3), label: Math.round((f.conf + cs + rec.scores.Reuse) / 3), sub: "/ 100", size: 150 }), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Bar, { l: "Material confidence", v: f.conf }), /* @__PURE__ */ React.createElement(Bar, { l: "Condition", v: cs }), ACTS.map((a) => /* @__PURE__ */ React.createElement(Bar, { key: a, l: a, v: rec.scores[a] }))))), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("button", { className: "btn full", onClick: () => {
+    setChosen(null);
+    setUserPick(null);
+    go("recommendation");
+  } }, "View Recommended Next Life \u2192")));
+}
+function Recommendation({ S }) {
+  const { report: r, chosen, setChosen, userPick, setUserPick, addG } = S;
+  const [dis, setDis] = useState(false), [chk, setChk] = useState({}), [fm, setFm] = useState(false);
+  if (!r || r === "fail") return /* @__PURE__ */ React.createElement(Empty, { msg: "Analyze a garment first." });
+  if (r.d.unassessed && !userPick) return /* @__PURE__ */ React.createElement("div", { className: "w sec fu" }, /* @__PURE__ */ React.createElement("h2", null, "Recommended Next Life"), React.createElement(Passport, { r }), React.createElement(Evidence, { r }), React.createElement(NextLife, { r }), React.createElement(RepairAdvisor, { r }), /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, "Not enough evidence to recommend yet"), /* @__PURE__ */ React.createElement("p", null, "We haven't assessed this garment's type or condition from the photo, so we won't guess a recommendation. Choose what you'd like to do and we'll show the matching plan and impact estimate."), /* @__PURE__ */ React.createElement("div", { className: "row" }, ACTS.map((a) => /* @__PURE__ */ React.createElement("button", { key: a, className: "node", onClick: () => {
+    setChosen(a);
+    setUserPick(a);
+  } }, ICON[a], " ", a)))));
+  const best = r.rec.best || userPick, { scores } = r.rec, act = chosen || best, im = calculateImpact(act), d = r.d, tg = (k) => setChk((c) => ({ ...c, [k]: !c[k] }));
+  const plan = {
+    Reuse: { t: "Reuse Studio \u2014 outfit & redesign ideas", p: /* @__PURE__ */ React.createElement(ReuseStudio, { r, S }) },
+    Repair: { t: "Repair Advisor", p: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", null, "Issue: ", d.dmg ? d.dmg.t + " (" + d.dmg.loc + ")" : "General mending", " \xB7 Difficulty: Easy \xB7 Time: 10\u201320 min \xB7 Needs: needle, matching thread"), /* @__PURE__ */ React.createElement("ol", { className: "sans" }, /* @__PURE__ */ React.createElement("li", null, "Wash and dry the garment."), /* @__PURE__ */ React.createElement("li", null, "Turn it inside out and align the edges."), /* @__PURE__ */ React.createElement("li", null, "Stitch with small even stitches."), /* @__PURE__ */ React.createElement("li", null, "Knot, trim, and test the repair.")), /* @__PURE__ */ React.createElement("p", null, "Repair vs replace: repairing lowers material demand and extends life; replacing creates demand for another garment. No exact savings are claimed.")) },
+    Donate: { t: "Prepare Your Garment for Donation", p: /* @__PURE__ */ React.createElement(React.Fragment, null, ["Wash garment", "Check for damage", "Remove personal items", "Fold neatly", "Check organization requirements"].map((k) => /* @__PURE__ */ React.createElement("div", { key: k }, /* @__PURE__ */ React.createElement("label", { className: "sans" }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", checked: !!chk[k], onChange: () => tg(k) }), " ", k))), /* @__PURE__ */ React.createElement("div", { className: "grid g4", style: { marginTop: 10 } }, ["Local NGO", "Clothing donation centre", "Community collection point"].map((x) => /* @__PURE__ */ React.createElement("div", { key: x, className: "card" }, /* @__PURE__ */ React.createElement("h3", null, x), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Placeholder \u2014 location search comes with a future backend."))))) },
+    Recycle: { t: "Textile Recycling Guide", p: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", null, "Whether it's recyclable depends on material, blend, condition, contamination and local acceptance. Before recycling, remove buttons and (where required) zippers or other non-textile parts. Check the accepted materials of your local textile collection program \u2014 not every textile can be recycled locally.")) },
+    "Brand Take-back": { t: "Brand Take-Back", p: /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", null, "Brand: ", r.label ? r.label.brand : "Not detected", ". Status: program availability needs verification."), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => window.open("https://www.google.com/search?q=" + encodeURIComponent((r.label ? r.label.brand : "clothing brand") + " official garment take-back program"), "_blank", "noopener") }, "Find Official Program")) }
+  }[act];
+  return /* @__PURE__ */ React.createElement("div", { className: "w sec fu" }, /* @__PURE__ */ React.createElement("h2", null, "Recommended Next Life"), React.createElement(Passport, { r }), React.createElement(Evidence, { r }), React.createElement(NextLife, { r }), React.createElement(RepairAdvisor, { r }), !r.d.unassessed && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, /* @__PURE__ */ React.createElement("div", { className: "card", style: { background: "var(--g)", textAlign: "center", borderRadius: 36 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: "3rem" } }, ICON[best]), /* @__PURE__ */ React.createElement("p", { style: { color: "#cfe0d2", margin: 0 } }, "Recommended by RE-THREAD", /* @__PURE__ */ React.createElement(AI, null)), /* @__PURE__ */ React.createElement("h2", { style: { color: "#fff", textTransform: "uppercase" } }, best)), /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, "Next-life suitability"), ACTS.map((a) => /* @__PURE__ */ React.createElement(Bar, { key: a, l: ICON[a] + " " + a, v: scores[a] })), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Not scientifically exact probabilities."))), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Why did RE-THREAD recommend this?"), /* @__PURE__ */ React.createElement("p", null, "Your garment appears to have ", SEV[Math.max(...r.cond.items)].toLowerCase(), "\u2013level visible issues at worst, a suitability estimate of ", scores[best], "% for ", best.toLowerCase(), ", and ", r.label ? "label information available" : "no label evidence", ". Extending current use may preserve more existing value than immediately recycling."), /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("span", { className: "chip" }, "Condition: ", r.cond.overall), /* @__PURE__ */ React.createElement("span", { className: "chip" }, "Visible damage: ", r.cond.damage ? r.cond.damage.sev : "None"), /* @__PURE__ */ React.createElement("span", { className: "chip" }, "Fabric confidence: ", r.fabric.level)), /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("b", null, "What could change it?"), " Hidden damage, contamination, inaccurate material identification, or additional label information.")), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Your decision"), !dis ? /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("button", { className: "btn full", onClick: () => {
+    setChosen(best);
+    setUserPick(best);
+  } }, "I Chose ", best), /* @__PURE__ */ React.createElement("button", { className: "btn o full", onClick: () => setDis(true) }, "I Don't Agree")) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("p", null, "What do you want to do instead?"), /* @__PURE__ */ React.createElement("div", { className: "row" }, ACTS.map((a) => /* @__PURE__ */ React.createElement("button", { key: a, className: "node", onClick: () => {
+    setChosen(a);
+    setUserPick(a);
+    setDis(false);
+  } }, ICON[a], " ", a)))), userPick && /* @__PURE__ */ React.createElement("p", { className: "sans" }, /* @__PURE__ */ React.createElement("b", null, "User Decision"), " \u2014 Recommended by AI: ", best, " \xB7 Chosen by user: ", userPick))), userPick && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Action plan: ", plan.t), plan.p), /* @__PURE__ */ React.createElement("h2", { style: { fontSize: "1.7rem", margin: "28px 0 12px" } }, "Your Circular Impact"), /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, [["\u23F3", "Life extended", im.months + " months"], ["\u{1F4A7}", "Water impact", im.water.toLocaleString() + " L"], ["\u{1F331}", "CO\u2082 impact", im.co2 + " kg CO\u2082e"], ["\u{1F5D1}\uFE0F", "Textile waste avoided", im.waste + " kg"]].map((x) => /* @__PURE__ */ React.createElement("div", { key: x[1], className: "card" }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: "1.6rem" } }, x[0]), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0" } }, x[1]), /* @__PURE__ */ React.createElement("div", { className: "big", style: { fontSize: "1.6rem" } }, x[2]), /* @__PURE__ */ React.createElement("span", { className: "note" }, "Illustrative estimate")))), /* @__PURE__ */ React.createElement("div", { className: "grid g2", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, "Continue Using"), /* @__PURE__ */ React.createElement("p", null, "Existing garment \u2192 extended life \u2192 potentially delayed replacement.")), /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, "Replace Now"), /* @__PURE__ */ React.createElement("p", null, "Existing garment discarded + a new garment purchased."))), /* @__PURE__ */ React.createElement("button", { className: "btn o", style: { marginTop: 14 }, onClick: () => setFm(!fm) }, "Impact Methodology"), fm && /* @__PURE__ */ React.createElement("div", { className: "warn" }, "Values depend on assumptions \u2014 garment type, material, replacement scenario, use duration and lifecycle data. A photo can't measure water or carbon; these are demonstration figures."), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("button", { className: "btn full", onClick: () => {
+    addG(r, best, act);
+    go("wardrobe");
+  } }, "Add to My Wardrobe"))));
+}
+function Wardrobe({ S }) {
+  const { wardrobe: W, setW } = S;
+  const [q, setQ] = useState(""), [ty, setTy] = useState("All"), [so, setSo] = useState("Recently added"), [sel, setSel] = useState(null), [cmp, setCmp] = useState([]);
+  const tog = (id) => setCmp((c) => c.includes(id) ? c.filter((x) => x !== id) : [...c.slice(-1), id]);
+  const items = W.filter((g) => (ty === "All" || g.type === ty) && (q === "" || JSON.stringify(g).toLowerCase().includes(q.toLowerCase()) || q.toLowerCase() === "needs repair" && g.action === "Repair")).sort((a, b) => so === "Material" ? a.material.localeCompare(b.material) : so === "Condition" ? a.cond.localeCompare(b.cond) : so === "Lifecycle stage" ? a.ev.length - b.ev.length : 0);
+  const cur = W.find((g) => g.id === sel) || items[0];
+  const upd = (id, fn) => setW((w) => w.map((g) => g.id === id ? fn(g) : g));
+  return /* @__PURE__ */ React.createElement("div", { className: "w sec" }, /* @__PURE__ */ React.createElement("h2", null, "My Wardrobe"), /* @__PURE__ */ React.createElement("label", { className: "sans", htmlFor: "sq", style: { display: "none" } }, "Search"), /* @__PURE__ */ React.createElement("input", { id: "sq", type: "search", placeholder: "Search my wardrobe\u2026 (cotton, blue, needs repair, donated)", value: q, onChange: (e) => setQ(e.target.value) }), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 10 } }, /* @__PURE__ */ React.createElement("select", { "aria-label": "Filter", value: ty, onChange: (e) => setTy(e.target.value) }, ["All", ...TYPES].map((t) => /* @__PURE__ */ React.createElement("option", { key: t }, t))), /* @__PURE__ */ React.createElement("select", { "aria-label": "Sort", value: so, onChange: (e) => setSo(e.target.value) }, ["Recently added", "Condition", "Material", "Lifecycle stage"].map((t) => /* @__PURE__ */ React.createElement("option", { key: t }, t)))), !items.length ? /* @__PURE__ */ React.createElement("p", null, "No garments match. ", /* @__PURE__ */ React.createElement("a", { style: { cursor: "pointer", color: "var(--g)" }, onClick: () => go("scan") }, "Scan one \u2192")) : /* @__PURE__ */ React.createElement("div", { className: "grid g4", style: { marginTop: 16 } }, items.map((g) => /* @__PURE__ */ React.createElement("div", { key: g.id, tabIndex: "0", className: "card h", style: { cursor: "pointer", borderColor: cur && cur.id === g.id ? "var(--g)" : "" }, onClick: () => setSel(g.id), onKeyDown: (e) => e.key === "Enter" && setSel(g.id) }, /* @__PURE__ */ React.createElement("img", { className: "th", src: g.img, alt: g.name }), /* @__PURE__ */ React.createElement("h3", { style: { marginTop: 8 } }, g.name), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0" } }, g.material, " \xB7 ", g.cond), /* @__PURE__ */ React.createElement("span", { className: "chip" }, ICON[g.action], " ", g.ev[g.ev.length - 1]), g.sample && /* @__PURE__ */ React.createElement("span", { className: "chip" }, "sample"), /* @__PURE__ */ React.createElement("label", { className: "sans", onClick: (e) => e.stopPropagation(), style: { display: "block", marginTop: 8, fontSize: ".85rem" } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", checked: cmp.includes(g.id), onChange: () => tog(g.id) }), " Compare")))), cmp.length === 2 && (() => {
+    const [a, b] = cmp.map((id) => W.find((g) => g.id === id)).filter(Boolean);
+    if (!b) return null;
+    const R = [["Material", (g) => g.material], ["Condition", (g) => g.cond], ["Chosen action", (g) => g.action], ["Current stage", (g) => g.ev[g.ev.length - 1]], ["Reuse", (g) => g.sc ? g.sc.Reuse + "%" : "\u2014"], ["Repairability", (g) => g.sc ? g.sc.Repair + "%" : "\u2014"], ["Donation", (g) => g.sc ? g.sc.Donate + "%" : "\u2014"], ["Recyclability", (g) => g.sc ? g.sc.Recycle + "%" : "\u2014"], ["Care", (g) => g.care ? g.care.join(", ") : "No label read"]];
+    return /* @__PURE__ */ React.createElement("div", { className: "card fu", style: { marginTop: 16, overflowX: "auto" } }, /* @__PURE__ */ React.createElement("h3", null, "Compare Garments"), /* @__PURE__ */ React.createElement("table", null, /* @__PURE__ */ React.createElement("thead", null, /* @__PURE__ */ React.createElement("tr", null, /* @__PURE__ */ React.createElement("th", null), /* @__PURE__ */ React.createElement("th", null, a.name), /* @__PURE__ */ React.createElement("th", null, b.name))), /* @__PURE__ */ React.createElement("tbody", null, R.map(([l, f]) => /* @__PURE__ */ React.createElement("tr", { key: l }, /* @__PURE__ */ React.createElement("td", null, l), /* @__PURE__ */ React.createElement("td", null, f(a)), /* @__PURE__ */ React.createElement("td", null, f(b)))))), /* @__PURE__ */ React.createElement("p", { className: "note" }, "Scores are application-generated estimates saved at analysis time; sample garments have none."));
+  })(), cur && /* @__PURE__ */ React.createElement("div", { className: "card fu", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "Digital Garment Passport"), /* @__PURE__ */ React.createElement("p", { className: "sans" }, "ID: ", cur.id.toUpperCase(), " \xB7 ", cur.name, " \xB7 ", cur.material, " \xB7 ", cur.cond, cur.brand ? " \xB7 " + cur.brand : "", /* @__PURE__ */ React.createElement("br", null), "Chosen action: ", cur.action), /* @__PURE__ */ React.createElement("h3", null, "Garment Journey"), /* @__PURE__ */ React.createElement(Timeline, { steps: cur.ev }), /* @__PURE__ */ React.createElement("p", { style: { marginTop: 12 } }, /* @__PURE__ */ React.createElement("b", null, "Update current status:")), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 4 } }, STAGES.map((s) => /* @__PURE__ */ React.createElement("button", { key: s, className: "node", onClick: () => upd(cur.id, (g) => ({ ...g, ev: [...g.ev, s] })) }, s))), /* @__PURE__ */ React.createElement("div", { className: "row" }, /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => {
+    const t = [cur.name, cur.material, cur.cond, "Action: " + cur.action, "Journey: " + cur.ev.join(" > ")].join(" | ");
+    try {
+      navigator.clipboard.writeText(t).then(() => alert("Passport summary copied.")).catch(() => alert("Copy isn't available here."));
+    } catch (e) {
+      alert("Copy isn't available here.");
+    }
+  } }, "Copy Passport Summary"), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => {
+    if (confirm("Delete this garment?")) {
+      setW((w) => w.filter((g) => g.id !== cur.id));
+      setSel(null);
+    }
+  } }, "Delete Garment"))));
+}
+function Dashboard({ S }) {
+  const { wardrobe: W, setW } = S;
+  const [dis, setDis] = useState(store.get("rethread2:dis", []));
+  const N = [];
+  W.forEach((g) => {
+    const l = g.ev[g.ev.length - 1];
+    if (g.action === "Repair" && l === "Repair") N.push([g.id + "r", "\u{1F9F5} " + g.name + " was marked for repair \u2014 update its stage to Reuse once mended."]);
+    if (g.action === "Donate" && l === "Donation") N.push([g.id + "d", "\u{1F381} Remember to update the lifecycle after donating " + g.name + "."]);
+    if (/^g\d+$/.test(g.id) && Date.now() - Number(g.id.slice(1)) < 864e5) N.push([g.id + "p", "\u{1F4C4} Garment passport updated for " + g.name + "."]);
+  });
+  const shown = N.filter((n) => !dis.includes(n[0]));
+  const cnt = (a) => W.filter((g) => g.action === a).length, P = { Reuse: 60, Repair: 80, Donate: 70, Recycle: 50, "Brand Take-back": 60 };
+  const score = Math.min(1e3, 200 + W.reduce((s, g) => s + P[g.action] + g.ev.length * 10, 0) + 25 * S.projects.filter((p) => p.status === "Completed").length), tally = (k) => {
+    const m = {};
+    W.forEach((g) => m[g[k]] = (m[g[k]] || 0) + 1);
+    return Object.entries(m);
+  };
+  const tw = W.reduce((s, g) => s + IMP[g.action][0], 0), tc = W.reduce((s, g) => s + IMP[g.action][1], 0);
+  const A = [["\u{1F331}", "First Step", "Added first garment", W.length > 0], ["\u267B\uFE0F", "Circular Starter", "Completed first circular action", W.length > 0], ["\u{1F9F5}", "Repair Hero", "Repaired a garment", cnt("Repair") > 0], ["\u{1F381}", "Second Life", "Donated a garment", cnt("Donate") > 0], ["\u{1F455}", "Garment Saver", "Extended multiple garments", W.length >= 3]];
+  const Dist = ({ t, d }) => /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h3", null, t), d.map(([k, v]) => /* @__PURE__ */ React.createElement(Bar, { key: k, l: k, v: Math.round(v / W.length * 100) })));
+  return /* @__PURE__ */ React.createElement("div", { className: "w sec fu" }, /* @__PURE__ */ React.createElement("h2", null, "My Circular Dashboard"), /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, /* @__PURE__ */ React.createElement("div", { className: "card", style: { textAlign: "center" } }, /* @__PURE__ */ React.createElement("h3", null, "Circular Score"), /* @__PURE__ */ React.createElement(Ring, { v: score, max: 1e3, label: score + " \u{1F331}", sub: "/ 1000", size: 180 }), /* @__PURE__ */ React.createElement("p", { className: "note" }, "RE-THREAD Circular Score is a product engagement metric based on your recorded actions \u2014 not an environmental measurement.")), /* @__PURE__ */ React.createElement("div", { className: "grid g2" }, [[W.length, "Garments"], [cnt("Reuse"), "Reused"], [cnt("Donate"), "Donated"], [cnt("Repair"), "Repaired"], [cnt("Recycle"), "Recycled"], [cnt("Brand Take-back"), "Take-back"]].map((x) => /* @__PURE__ */ React.createElement("div", { className: "card", key: x[1] }, /* @__PURE__ */ React.createElement("div", { className: "big" }, x[0]), x[1])))), /* @__PURE__ */ React.createElement("div", { className: "grid g2", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("div", { className: "big" }, tw.toLocaleString(), " L"), "Estimated water impact ", /* @__PURE__ */ React.createElement("span", { className: "note" }, "(illustrative)")), /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("div", { className: "big" }, tc.toFixed(1), " kg"), "Estimated CO\u2082e impact ", /* @__PURE__ */ React.createElement("span", { className: "note" }, "(illustrative)"))), W.length > 0 && /* @__PURE__ */ React.createElement("div", { className: "grid g2", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement(Dist, { t: "Lifecycle distribution", d: tally("action") }), /* @__PURE__ */ React.createElement(Dist, { t: "Material distribution", d: tally("material") }), /* @__PURE__ */ React.createElement(Dist, { t: "Condition distribution", d: tally("cond") })), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 16 } }, /* @__PURE__ */ React.createElement("h3", null, "\u{1F514} Notifications"), shown.length ? shown.map((n) => /* @__PURE__ */ React.createElement("div", { key: n[0], className: "row sans", style: { margin: "8px 0", alignItems: "center", justifyContent: "space-between" } }, /* @__PURE__ */ React.createElement("span", null, n[1]), /* @__PURE__ */ React.createElement("button", { className: "btn o", style: { padding: "6px 14px", minHeight: 0 }, onClick: () => {
+    const d = [...dis, n[0]];
+    setDis(d);
+    store.set("rethread2:dis", d);
+  } }, "Dismiss"))) : /* @__PURE__ */ React.createElement("p", null, "You're all caught up.")), /* @__PURE__ */ React.createElement("h2", { style: { fontSize: "1.6rem", margin: "28px 0 12px" } }, "Achievements"), /* @__PURE__ */ React.createElement("div", { className: "grid g4" }, A.map((a) => /* @__PURE__ */ React.createElement("div", { key: a[1], className: "card badge" + (a[3] ? " on" : ""), style: { textAlign: "center" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: "2rem" } }, a[0]), /* @__PURE__ */ React.createElement("h3", null, a[1]), /* @__PURE__ */ React.createElement("p", { style: { margin: 0, fontSize: ".85rem" } }, a[2])))), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 24 } }, /* @__PURE__ */ React.createElement("h3", null, "Your Garment Data"), /* @__PURE__ */ React.createElement("p", null, "Photos, garment profiles, analysis results and lifecycle history are stored only in this browser (localStorage). There is no server yet, so nothing is uploaded."), /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => {
+    if (confirm("Clear the whole wardrobe?")) setW([]);
+  } }, "Clear Wardrobe")));
+}
+function Library({ S }) {
+  const [q, setQ] = useState(""), [open, setO] = useState(null), [msg, setM] = useState(""), [chat, setC] = useState([["bot", "Ask me about a fabric, care, or why a recommendation was made."]]);
+  const names = Object.keys(LIB).filter((n) => n.toLowerCase().includes(q.toLowerCase()));
+  const ask = () => {
+    if (!msg.trim()) return;
+    const t = msg.toLowerCase(), r = S.report && S.report !== "fail" ? S.report : null;
+    let a;
+    const fab = Object.keys(LIB).find((n) => t.includes(n.toLowerCase()));
+    if (fab) a = fab + ": " + LIB[fab][0] + ". " + LIB[fab][1] + ". Care: " + LIB[fab][2] + ". Recycling: " + LIB[fab][4] + ".";
+    else if (/why|recommend/.test(t)) a = r ? "Based on estimates for " + r.d.name + ": " + r.rec.best + " scored highest (" + r.rec.scores[r.rec.best] + "%) given its visible condition. Hidden damage or new label info could change this." : "Analyze a garment first and I can explain its recommendation.";
+    else if (/wash|care|symbol/.test(t)) a = r && r.label ? "Care label: " + r.label.care.map((x) => CARE[x] || x).join(". ") + "." : "No label was read. Upload a care-label photo, or check the fabric page for typical care.";
+    else if (/donat/.test(t)) a = "Donate when wearable and clean: wash, check for damage, fold neatly, and check the organization's requirements.";
+    else if (/repair/.test(t)) a = "Localized damage like small tears, loose threads or seams is usually repairable. See the Repair Advisor after analysis.";
+    else a = "I can answer about fabrics in the library, care, donation, repair, or explain a recommendation.";
+    setC((c) => [...c, ["me", msg], ["bot", a]]);
+    setM("");
+  };
+  return /* @__PURE__ */ React.createElement("div", { className: "w sec" }, /* @__PURE__ */ React.createElement("h2", null, "Textile Library"), /* @__PURE__ */ React.createElement("input", { type: "search", "aria-label": "Search fabrics", placeholder: "Search fabrics\u2026", value: q, onChange: (e) => setQ(e.target.value) }), /* @__PURE__ */ React.createElement("div", { className: "grid g2", style: { marginTop: 16 } }, names.map((n) => /* @__PURE__ */ React.createElement("div", { key: n, className: "card h", tabIndex: "0", style: { cursor: "pointer" }, onClick: () => setO(open === n ? null : n), onKeyDown: (e) => e.key === "Enter" && setO(open === n ? null : n) }, /* @__PURE__ */ React.createElement("h3", null, n), /* @__PURE__ */ React.createElement("span", { className: "chip" }, FCAT(n)), /* @__PURE__ */ React.createElement("p", { style: { margin: "4px 0" } }, LIB[n][0]), open === n && /* @__PURE__ */ React.createElement("p", { className: "sans" }, /* @__PURE__ */ React.createElement("b", null, "Properties:"), " ", LIB[n][1], /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("b", null, "Care:"), " ", LIB[n][2], /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("b", null, "Repair/reuse:"), " ", LIB[n][3], /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement("b", null, "Recycling:"), " ", LIB[n][4])))), /* @__PURE__ */ React.createElement("div", { className: "card", style: { marginTop: 24 } }, /* @__PURE__ */ React.createElement("h3", null, "RE-THREAD Textile Assistant"), /* @__PURE__ */ React.createElement("div", { style: { maxHeight: 260, overflow: "auto" }, "aria-live": "polite" }, chat.map((c, i) => /* @__PURE__ */ React.createElement("p", { key: i, className: "sans", style: { textAlign: c[0] === "me" ? "right" : "left", color: c[0] === "me" ? "var(--g)" : "var(--ink)" } }, c[1]))), /* @__PURE__ */ React.createElement("div", { className: "row", style: { marginTop: 8 } }, /* @__PURE__ */ React.createElement("input", { type: "text", "aria-label": "Question", style: { flex: 1 }, placeholder: "e.g. What is cotton?", value: msg, onChange: (e) => setMsg(e.target.value), onKeyDown: (e) => e.key === "Enter" && ask() }), /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: ask }, "Ask"))));
+}
+const Empty = ({ msg, retry, detail, onRetry, onManual }) => /* @__PURE__ */ React.createElement("div", { className: "w sec", style: { textAlign: "center" } }, /* @__PURE__ */ React.createElement("h2", null, msg), detail && /* @__PURE__ */ React.createElement("p", { className: "sans", role: "alert" }, detail), /* @__PURE__ */ React.createElement("div", { className: "row", style: { justifyContent: "center" } }, /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: () => onRetry ? onRetry() : go("scan") }, retry ? "Try Analysis Again" : "Go to Scan"), retry && /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: () => go("scan") }, "Choose Another Image"), onManual && /* @__PURE__ */ React.createElement("button", { className: "btn o", onClick: onManual }, "Enter Details Manually")));
+function App() {
+  const route = useRoute();
+  const [ev, setEv] = useState({}), [demo, setDemo] = useState(null), [report, setReport] = useState(null), [chosen, setChosen] = useState(null), [userPick, setUserPick] = useState(null);
+  const [wardrobe, setW] = useState(() => store.get("rethread2:wardrobe", SEED));
+  useEffect(() => store.set("rethread2:wardrobe", wardrobe), [wardrobe]);
+  const [projects, setProjects] = useState(() => store.get("rethread2:projects", [])), [saved, setSaved] = useState(() => store.get("rethread2:saved", []));
+  useEffect(() => store.set("rethread2:projects", projects), [projects]);
+  useEffect(() => store.set("rethread2:saved", saved), [saved]);
+  const addG = (r, best, act) => {
+    const l = r.label;
+    setW((w) => [{ id: "g" + Date.now(), name: r.d.name, type: r.d.type, material: l ? l.comp[0][0] : r.fabric.top, cond: r.cond.overall, action: act, img: r.img.length > 15e4 ? mk(r.d.hex) : r.img, brand: l && l.brand, aiRec: best, sc: r.rec.scores, care: l ? l.care : null, ev: ["Purchased", "First Use", ...act === "Repair" ? ["Repair"] : [], { Reuse: "Reuse", Repair: "Reuse", Donate: "Donation", Recycle: "Recycling", "Brand Take-back": "Recycling" }[act]] }, ...w]);
+    setEv({});
+    setDemo(null);
+    setReport(null);
+    setChosen(null);
+    setUserPick(null);
+  };
+  const S = { projects, setProjects, saved, setSaved, ev, setEv, demo, setDemo, report, setReport, chosen, setChosen, userPick, setUserPick, wardrobe, setW, addG };
+  const P = { home: /* @__PURE__ */ React.createElement(Home, null), scan: /* @__PURE__ */ React.createElement(Scan, { S }), analysis: /* @__PURE__ */ React.createElement(Analysis, { S }), recommendation: /* @__PURE__ */ React.createElement(Recommendation, { S }), wardrobe: /* @__PURE__ */ React.createElement(Wardrobe, { S }), dashboard: /* @__PURE__ */ React.createElement(Dashboard, { S }), library: /* @__PURE__ */ React.createElement(Library, { S }) }[route];
+  return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(Nav, { route }), /* @__PURE__ */ React.createElement("main", { style: { minHeight: "70vh" } }, P), /* @__PURE__ */ React.createElement("footer", null, /* @__PURE__ */ React.createElement("div", { className: "w" }, "RE-THREAD \xB7 AI-assisted garment intelligence \xB7 Impact figures are illustrative")));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/* @__PURE__ */ React.createElement(App, null));
+ 
+</script></body></html>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fdfaf7;
-            color: #333;
-            line-height: 1.6;
-        }
 
-        /* --- Header & Navigation --- */
-        header {
-            background: linear-gradient(rgba(44, 30, 18, 0.8), rgba(44, 30, 18, 0.8)), 
-                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=2078&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
 
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-        }
 
-        nav {
-            margin-top: 20px;
-        }
 
-        nav a {
-            color: #fdfaf7;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
 
-        nav a:hover {
-            background: rgba(188, 138, 95, 0.8); /* Warm tan hover effect */
-        }
 
-        /* --- Main Content Section --- */
-        .container {
-            max-width: 900px;
-            margin: -50px auto 50px; /* Pulls the box slightly over the header */
-            padding: 60px 40px;
-            background: white;
-            text-align: center;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            position: relative;
-        }
 
-        .container h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            color: #2c1e12;
-            margin-bottom: 20px;
-        }
 
-        .container p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
 
-        .cta-button {
-            display: inline-block;
-            background: #bc8a5f;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(188, 138, 95, 0.4);
-            transition: 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            background: #a3734a;
-        }
-
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            color: #888;
-            background: #2c1e12;
-            color: #fdfaf7;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .container { margin: 20px; padding: 30px; }
-            nav a { display: block; margin: 10px 0; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Cozy Bean Cafe</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h2>Welcome to Your Daily Escape</h2>
-        <p>Experience the finest artisanal coffee and freshly baked pastries in a warm, welcoming atmosphere. We roast our beans in small batches to ensure every cup is perfection.</p>
-        <a href="menu.html" class="cta-button">Explore the Menu</a>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Cozy Bean Cafe | Visit us in Pimpri-Chinchwad</p>
-    </footer>
-
-</body>
-</html>
